@@ -83,8 +83,11 @@
   .upcoming-item:hover { background: #faf8f3; }
   .upcoming-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green-accent); flex-shrink: 0; }
   .upcoming-dot.next { background: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.2); }
-  .upcoming-date { font-size: 12px; font-weight: 600; color: var(--ink-mid); min-width: 90px; }
-  .upcoming-desc { font-size: 13px; color: var(--ink-light); flex: 1; }
+  .upcoming-date { font-size: 12px; font-weight: 600; color: var(--ink-mid); min-width: 90px; display: block; }
+  .upcoming-desc { font-size: 13px; color: var(--ink-light); display: block; margin-top: 2px; }
+  .upcoming-main { flex: 1; }
+  .upcoming-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+  .shift-time { font-size: 11px; color: var(--ink-light); white-space: nowrap; }
   .upcoming-badge { font-size: 10px; font-weight: 600; background: var(--gold); color: var(--green-dark); padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
   .site-footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--ink-light); border-top: 1px solid var(--border); margin-top: 1rem; }
   @media (max-width: 520px) {
@@ -192,31 +195,89 @@
        Photos will live in: Day_2_June_7/
   ════════════════════════════════════ -->
 
-  <!-- UPCOMING SCHEDULE -->
+  <!-- SCHEDULE -->
   <div class="upcoming">
-    <div class="upcoming-header">Schedule · June–July 2026</div>
+    <div class="upcoming-header">My Schedule · June–July 2026 · Levi's Stadium, Santa Clara</div>
     <ul class="upcoming-list">
+
       <li class="upcoming-item">
         <div class="upcoming-dot next"></div>
-        <span class="upcoming-date">Sun Jun 7</span>
-        <span class="upcoming-desc">Fan Operations Team Training · Levi's Stadium</span>
-        <span class="upcoming-badge">Next</span>
+        <div class="upcoming-main">
+          <span class="upcoming-date">Sun Jun 7</span>
+          <span class="upcoming-desc">Venue Specific Training — Fan Operations</span>
+        </div>
+        <div class="upcoming-right">
+          <span class="shift-time">9:30 AM – 12:00 PM</span>
+          <span class="upcoming-badge">Next</span>
+        </div>
       </li>
+
       <li class="upcoming-item">
         <div class="upcoming-dot"></div>
-        <span class="upcoming-date">Sat Jun 13</span>
-        <span class="upcoming-desc">Game 1 — Switzerland vs. Qatar · Shift starts ~2–3 hrs before KO</span>
+        <div class="upcoming-main">
+          <span class="upcoming-date">Sat Jun 13</span>
+          <span class="upcoming-desc">Match #8 — Qatar vs. Switzerland · KO 12:00 PM</span>
+        </div>
+        <div class="upcoming-right">
+          <span class="shift-time">Shift 8:00 AM – 1:00 PM</span>
+        </div>
       </li>
+
       <li class="upcoming-item">
         <div class="upcoming-dot"></div>
-        <span class="upcoming-date">Jun</span>
-        <span class="upcoming-desc">Games 2–5 · Group Stage (dates TBC)</span>
+        <div class="upcoming-main">
+          <span class="upcoming-date">Mon Jun 16</span>
+          <span class="upcoming-desc">Match #20 — Austria vs. Jordan · KO 8:59 PM</span>
+        </div>
+        <div class="upcoming-right">
+          <span class="shift-time">Shift 5:00 PM – 10:00 PM</span>
+        </div>
       </li>
+
       <li class="upcoming-item">
         <div class="upcoming-dot"></div>
-        <span class="upcoming-date">Tue Jul 1</span>
-        <span class="upcoming-desc">Game 6 — Round of 32 · San Francisco Bay Area Stadium · Final shift</span>
+        <div class="upcoming-main">
+          <span class="upcoming-date">Thu Jun 19</span>
+          <span class="upcoming-desc">Match #31 — Turkey vs. Paraguay · KO 8:59 PM</span>
+        </div>
+        <div class="upcoming-right">
+          <span class="shift-time">Shift 4:00 PM – 9:00 PM</span>
+        </div>
       </li>
+
+      <li class="upcoming-item">
+        <div class="upcoming-dot"></div>
+        <div class="upcoming-main">
+          <span class="upcoming-date">Sun Jun 22</span>
+          <span class="upcoming-desc">Match #44 — Jordan vs. Algeria · KO 8:00 PM</span>
+        </div>
+        <div class="upcoming-right">
+          <span class="shift-time">Shift 4:00 PM – 9:00 PM</span>
+        </div>
+      </li>
+
+      <li class="upcoming-item">
+        <div class="upcoming-dot"></div>
+        <div class="upcoming-main">
+          <span class="upcoming-date">Wed Jun 25</span>
+          <span class="upcoming-desc">Match #60 — Paraguay vs. Australia · KO 7:00 PM</span>
+        </div>
+        <div class="upcoming-right">
+          <span class="shift-time">Shift 3:00 PM – 8:00 PM</span>
+        </div>
+      </li>
+
+      <li class="upcoming-item">
+        <div class="upcoming-dot"></div>
+        <div class="upcoming-main">
+          <span class="upcoming-date">Wed Jul 1</span>
+          <span class="upcoming-desc">Match #81 — Round of 32 · KO 5:00 PM · Final shift</span>
+        </div>
+        <div class="upcoming-right">
+          <span class="shift-time">Shift 1:30 PM – 7:30 PM</span>
+        </div>
+      </li>
+
     </ul>
   </div>
 
