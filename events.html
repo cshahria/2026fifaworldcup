@@ -285,6 +285,64 @@
     font-weight: 500;
   }
 
+  /* ── Countdown ── */
+  .countdown-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 8px;
+    padding: 5px 10px;
+    min-width: 44px;
+  }
+  .cd-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f0d080;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+  .cd-label {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+  }
+  .cd-sep {
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .cd-live {
+    display: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #f0d080;
+    background: rgba(201,150,58,0.25);
+    border: 1px solid rgba(201,150,58,0.4);
+    border-radius: 20px;
+    padding: 4px 12px;
+    letter-spacing: 0.05em;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
   /* ── Footer ── */
   footer {
     text-align: center;
@@ -317,6 +375,7 @@
   <a class="nav-brand" href="index.html">⚽ My Summer Adventure</a>
   <div class="nav-links">
     <a href="index.html">Journal</a>
+    <a href="index.html#training">Training</a>
     <a href="resources.html">Resources</a>
     <a href="events.html" class="active">Events</a>
   </div>
@@ -334,9 +393,19 @@
 
     <div class="event-card-header">
       <div class="ball-icon">⚽</div>
-      <div>
+      <div style="flex:1;">
         <h2>World Cup Opening Day Watch Party</h2>
         <span class="event-match-badge">Mexico vs. South Africa · Opening match</span>
+        <div class="countdown-strip" id="countdown-strip">
+          <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-label">days</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-label">hrs</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-label">min</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-label">sec</span></div>
+          <span class="cd-live" id="cd-live">⚽ LIVE NOW</span>
+        </div>
       </div>
     </div>
 
@@ -458,5 +527,58 @@
   <a class="career-link" href="https://cshahria.github.io/Career/index.html" target="_blank" rel="noopener">My career site ↗</a>
 </footer>
 
+<script>
+  (function() {
+    // Kickoff: June 11, 2026 12:00 PM PT (UTC-7)
+    var target = new Date('2026-06-11T12:00:00-07:00').getTime();
+    // Match ends ~2hrs after kickoff — hide after 14:00 PT
+    var matchEnd = new Date('2026-06-11T14:00:00-07:00').getTime();
+
+    var dEl = document.getElementById('cd-d');
+    var hEl = document.getElementById('cd-h');
+    var mEl = document.getElementById('cd-m');
+    var sEl = document.getElementById('cd-s');
+    var liveEl = document.getElementById('cd-live');
+    var strip = document.getElementById('countdown-strip');
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function tick() {
+      var now = Date.now();
+      var diff = target - now;
+
+      if (now > matchEnd) {
+        // Match over — hide countdown entirely
+        strip.style.display = 'none';
+        return;
+      }
+
+      if (diff <= 0) {
+        // It's match time — show LIVE badge, hide units
+        dEl.parentElement.style.display = 'none';
+        hEl.parentElement.style.display = 'none';
+        mEl.parentElement.style.display = 'none';
+        sEl.parentElement.style.display = 'none';
+        document.querySelectorAll('.cd-sep').forEach(function(s){ s.style.display='none'; });
+        liveEl.style.display = 'inline-block';
+        return;
+      }
+
+      var totalSec = Math.floor(diff / 1000);
+      var days = Math.floor(totalSec / 86400);
+      var hrs  = Math.floor((totalSec % 86400) / 3600);
+      var mins = Math.floor((totalSec % 3600) / 60);
+      var secs = totalSec % 60;
+
+      dEl.textContent = days;
+      hEl.textContent = pad(hrs);
+      mEl.textContent = pad(mins);
+      sEl.textContent = pad(secs);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 </body>
 </html>
