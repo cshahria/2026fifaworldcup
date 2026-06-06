@@ -26,44 +26,13 @@
     min-height: 100vh;
   }
 
-  /* ── Nav (matches existing site style) ── */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.5rem;
-    height: 56px;
-    background: var(--green);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-brand {
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-links {
-    display: flex;
-    gap: 4px;
-  }
-  .nav-links a {
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: background 0.15s, color 0.15s;
-  }
-  .nav-links a:hover, .nav-links a.active {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-  }
+  /* ── Nav ── */
+  .site-nav { background: #0d3b1f; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 52px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: #f0d080; text-decoration: none; }
+  .nav-links { display: flex; }
+  .nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 1rem; height: 52px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .nav-link:hover { color: #fff; }
+  .nav-link.active { color: #f0d080; border-bottom-color: #c9963a; }
 
   /* ── Page hero ── */
   .hero {
@@ -371,13 +340,14 @@
 </head>
 <body>
 
-<nav>
-  <a class="nav-brand" href="index.html">⚽ My Summer Adventure</a>
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">⚽ 2026 Adventures</a>
   <div class="nav-links">
-    <a href="index.html">Journal</a>
-    <a href="index.html#training">Training</a>
-    <a href="resources.html">Resources</a>
-    <a href="events.html" class="active">Events</a>
+    <a href="index.html" class="nav-link">Journal</a>
+    <a href="connect.html" class="nav-link">Connect</a>
+    <a href="resources.html" class="nav-link">Resources</a>
+    <a href="events.html" class="nav-link active">Events</a>
+    <a href="https://cshahria.github.io/Career/index.html" class="nav-link" target="_blank" rel="noopener">Career ↗</a>
   </div>
 </nav>
 

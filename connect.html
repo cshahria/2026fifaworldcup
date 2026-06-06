@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect · My FIFA World Cup 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green-dark: #0d3b1f;
+    --green-mid: #1a5c32;
+    --green-accent: #2d8c50;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --cream: #faf8f3;
+    --ink: #1a1a18;
+    --ink-mid: #3d3d38;
+    --ink-light: #7a7a72;
+    --border: rgba(26,26,24,0.12);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Source Sans 3', sans-serif;
+  }
+  body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; min-height: 100vh; }
+
+  /* ── NAV ── */
+  .site-nav { background: var(--green-dark); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 52px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--gold-light); text-decoration: none; }
+  .nav-links { display: flex; }
+  .nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 1rem; height: 52px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .nav-link:hover { color: #fff; }
+  .nav-link.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    background: var(--green-dark);
+    padding: 2.5rem 2rem 2.25rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 80px); }
+  .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; position: relative; }
+  .page-title { font-family: var(--serif); font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.08; position: relative; }
+  .page-title em { font-style: italic; color: var(--gold-light); }
+  .page-subtitle { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 0.6rem; position: relative; }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  /* ── ZOOM CARD ── */
+  .zoom-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    margin-bottom: 2.5rem;
+  }
+  .zoom-card-header {
+    background: var(--green-mid);
+    padding: 1.35rem 1.75rem 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .zoom-btn.wa-btn { background: #25D366; }
+  .zoom-btn.wa-btn:hover { background: #1ebe5d; }
+  .zoom-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .zoom-card-header h2 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .zoom-card-header p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 2px;
+  }
+  .zoom-card-body { padding: 1.75rem; }
+  .zoom-blurb {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── ZOOM LINK BOX ── */
+  .zoom-link-box {
+    background: #f7f5ef;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .zoom-link-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--green-mid);
+    margin-bottom: 4px;
+  }
+  .zoom-link-url {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-dark);
+    word-break: break-all;
+  }
+  .zoom-link-url a {
+    color: var(--green-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .zoom-link-url a:hover { color: var(--green-accent); border-color: var(--green-accent); }
+  .zoom-placeholder {
+    font-size: 13px;
+    color: var(--ink-light);
+    font-style: italic;
+  }
+  .zoom-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-mid);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .zoom-btn:hover { background: var(--green-dark); }
+  .zoom-btn.disabled {
+    background: #c8c6be;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* ── TOPICS PILL ROW ── */
+  .topics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--border);
+  }
+  .topic-pill {
+    font-size: 12px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    color: var(--ink-mid);
+  }
+
+  /* ── HOW IT WORKS ── */
+  .steps-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    margin-bottom: 2.5rem;
+  }
+  .steps-header {
+    background: var(--green-dark);
+    padding: 0.85rem 1.5rem;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+  }
+  .step-list { list-style: none; }
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .step-item:last-child { border-bottom: none; }
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--green-dark);
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-text { font-size: 14.5px; color: var(--ink-mid); line-height: 1.6; }
+  .step-text strong { color: var(--ink); font-weight: 600; }
+
+  /* ── NOTE ── */
+  .note {
+    font-size: 13px;
+    color: var(--ink-light);
+    text-align: center;
+    padding: 0.5rem 0 1rem;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--ink-light); border-top: 1px solid var(--border); margin-top: 1rem; }
+  .site-disclaimer { text-align: center; padding: 20px; margin-top: 10px; border-top: 1px solid #e0e0e0; font-size: 0.8rem; color: #666666; }
+
+  @media (max-width: 520px) {
+    .zoom-card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .zoom-link-box { flex-direction: column; }
+    .zoom-btn { width: 100%; justify-content: center; }
+  }
+</style>
+<script data-goatcounter="https://cshahria.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">⚽ 2026 Adventures</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Journal</a>
+    <a href="connect.html" class="nav-link active">Connect</a>
+    <a href="resources.html" class="nav-link">Resources</a>
+    <a href="events.html" class="nav-link">Events</a>
+    <a href="https://cshahria.github.io/Career/index.html" class="nav-link" target="_blank" rel="noopener">Career ↗</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">⚽ FIFA World Cup 2026 · Bay Area</p>
+  <h1 class="page-title">Let's <em>Reconnect</em></h1>
+  <p class="page-subtitle">World Cup is the perfect excuse — grab a quick Zoom and catch up</p>
+</div>
+
+<main class="container">
+
+  <!-- ── ZOOM ROOM ── -->
+  <div class="zoom-card">
+    <div class="zoom-card-header">
+      <div class="zoom-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.882l6.219-1.432A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.002-1.368l-.358-.214-3.692.85.878-3.598-.234-.369A9.786 9.786 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+        </svg>
+      </div>
+      <div>
+        <h2>WhatsApp Video Call</h2>
+        <p>Drop in — no agenda, just catching up over the beautiful game</p>
+      </div>
+    </div>
+    <div class="zoom-card-body">
+      <p class="zoom-blurb">
+        If we've crossed paths — through work, community, or a shared love of the sport — World Cup season is the best reason to reconnect. I have a standing WhatsApp video link open. No agenda required: just tap the button and let's catch up.
+      </p>
+
+      <div class="zoom-link-box">
+        <div>
+          <div class="zoom-link-label">WhatsApp Video Link</div>
+          <div class="zoom-link-url">
+            <a href="https://call.whatsapp.com/video/XdZQ8WdHM1BIoJGhHnsIgL" target="_blank" rel="noopener">call.whatsapp.com/video/XdZQ8WdH…</a>
+          </div>
+        </div>
+        <a href="https://call.whatsapp.com/video/XdZQ8WdHM1BIoJGhHnsIgL" target="_blank" rel="noopener" class="zoom-btn wa-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white" style="flex-shrink:0">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.882l6.219-1.432A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.002-1.368l-.358-.214-3.692.85.878-3.598-.234-.369A9.786 9.786 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+          </svg>
+          Join on WhatsApp ↗
+        </a>
+      </div>
+
+      <div class="topics-row">
+        <span class="topic-pill">⚽ World Cup 2026</span>
+        <span class="topic-pill">🏟 Volunteer experience</span>
+        <span class="topic-pill">🤖 AI &amp; ITSM</span>
+        <span class="topic-pill">🏥 Health tech</span>
+        <span class="topic-pill">🌉 Bay Area</span>
+        <span class="topic-pill">☕ General catch-up</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <div class="steps-card">
+    <div class="steps-header">How It Works</div>
+    <ul class="step-list">
+      <li class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Drop me a line</strong> — a quick LinkedIn message or reply to my outreach is enough. No formal request needed.</div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Pick a time</strong> — I'll share a calendar link so we can find 20–30 minutes that work for both of us.</div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Join on WhatsApp</strong> — tap the link above to start a video call directly. No app download needed if you already have WhatsApp.</div>
+      </li>
+    </ul>
+  </div>
+
+  <p class="note">Prefer email or LinkedIn? Works too — whatever's easiest for you.</p>
+
+</main>
+
+<footer class="site-footer">
+  A personal journal · Shared with family &amp; friends · Not for public distribution
+  <br><br>
+  <a href="https://cshahria.github.io/Career/index.html" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.5px;">My Career Site ↗</a>
+</footer>
+
+<footer class="site-disclaimer">
+  <p>This is a personal volunteer and fan journal. This project is independent and is not affiliated with, endorsed by, or connected to FIFA or the official FIFA World Cup 2026 tournament organizers.</p>
+</footer>
+
+</body>
+</html>
