@@ -148,6 +148,94 @@
   ⚠️ PERSONAL JOURNAL — All content on this site reflects my own personal opinions and experiences only. This journal is <strong>not affiliated with, endorsed by, or representative of FIFA, the FIFA World Cup 2026 competition, or any official organizing body.</strong> Per volunteer social media guidelines, views expressed here are solely my own.
 </div>
 
+<!-- ═══════════════════════════════════
+     MATCH DAY 1 COUNTDOWN — June 13
+════════════════════════════════════ -->
+<div style="max-width:780px; margin:0 auto 2rem; padding:0 1.5rem;">
+  <div style="background:#fff; border:1px solid rgba(26,26,24,0.12); border-left:4px solid #c9a84c; border-radius:12px; padding:1.25rem 1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+    <div style="display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap;">
+      <div style="font-size:2rem; line-height:1;">⚽</div>
+      <div style="flex:1; min-width:200px;">
+        <div style="font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:#7a7a72; margin-bottom:4px;">Next Shift</div>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:700; color:#0d3b1f; margin-bottom:4px; line-height:1.25;">Match Day 1 · Fan Operations</h2>
+        <div style="font-size:12px; color:#7a7a72; margin-bottom:1rem;">📍 San Francisco Bay Area Stadium · Sat Jun 13 · Shift 8:00 AM</div>
+        <div id="md1-strip" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+          <div style="text-align:center;">
+            <span id="md1-d" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
+            <div style="font-size:9px; text-transform:uppercase; letter-spacing:1px; color:#7a7a72;">days</div>
+          </div>
+          <span style="font-size:1.4rem; color:#c9a84c; font-weight:700; line-height:1; padding-bottom:12px;">:</span>
+          <div style="text-align:center;">
+            <span id="md1-h" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
+            <div style="font-size:9px; text-transform:uppercase; letter-spacing:1px; color:#7a7a72;">hrs</div>
+          </div>
+          <span style="font-size:1.4rem; color:#c9a84c; font-weight:700; line-height:1; padding-bottom:12px;">:</span>
+          <div style="text-align:center;">
+            <span id="md1-m" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
+            <div style="font-size:9px; text-transform:uppercase; letter-spacing:1px; color:#7a7a72;">min</div>
+          </div>
+          <span style="font-size:1.4rem; color:#c9a84c; font-weight:700; line-height:1; padding-bottom:12px;">:</span>
+          <div style="text-align:center;">
+            <span id="md1-s" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
+            <div style="font-size:9px; text-transform:uppercase; letter-spacing:1px; color:#7a7a72;">sec</div>
+          </div>
+          <span id="md1-live" style="display:none; background:#2d8c50; color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:20px; letter-spacing:0.5px; margin-left:6px;">⚽ ON SHIFT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // Shift start: Sat Jun 13 2026 08:00 AM PT
+    var target = new Date('2026-06-13T08:00:00-07:00').getTime();
+    // Shift end: 1:00 PM PT (5 hrs)
+    var shiftEnd = new Date('2026-06-13T13:00:00-07:00').getTime();
+
+    function pad(n) { return n < 10 ? '0' + n : n; }
+
+    function tick() {
+      var now = Date.now();
+      var strip = document.getElementById('md1-strip');
+      var live  = document.getElementById('md1-live');
+
+      if (now >= shiftEnd) {
+        // Shift over — hide the whole counter quietly
+        document.getElementById('md1-d').textContent = '00';
+        document.getElementById('md1-h').textContent = '00';
+        document.getElementById('md1-m').textContent = '00';
+        document.getElementById('md1-s').textContent = '00';
+        return;
+      }
+
+      if (now >= target) {
+        // On shift
+        document.getElementById('md1-d').textContent = '00';
+        document.getElementById('md1-h').textContent = '00';
+        document.getElementById('md1-m').textContent = '00';
+        document.getElementById('md1-s').textContent = '00';
+        live.style.display = 'inline-block';
+        return;
+      }
+
+      var diff = target - now;
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+
+      document.getElementById('md1-d').textContent = d;
+      document.getElementById('md1-h').textContent = pad(h);
+      document.getElementById('md1-m').textContent = pad(m);
+      document.getElementById('md1-s').textContent = pad(s);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+
 <div class="schedule-ribbon">
   🗓 Next up: Match Day 1 · Saturday June 13 · San Francisco Bay Area Stadium · Qatar vs. Switzerland · KO 12:00 PM
 </div>
