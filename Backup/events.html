@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Events · My FIFA World Cup 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1a5c2a;
+    --green-light: #e8f5ec;
+    --green-mid: #2d7a3e;
+    --gold: #c9963a;
+    --text: #1a1a1a;
+    --muted: #5c5c5c;
+    --border: rgba(0,0,0,0.10);
+    --radius: 12px;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f9f7f4;
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Nav ── */
+  .site-nav { background: #0d3b1f; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 52px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: #f0d080; text-decoration: none; }
+  .nav-links { display: flex; }
+  .nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 1rem; height: 52px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .nav-link:hover { color: #fff; }
+  .nav-link.active { color: #f0d080; border-bottom-color: #c9963a; }
+
+  /* ── Page hero ── */
+  .hero {
+    background: var(--green);
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+    color: #fff;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 8px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ── Main ── */
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── Event card ── */
+  .event-card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .event-card-header {
+    background: var(--green);
+    padding: 1.25rem 1.5rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .ball-icon {
+    font-size: 28px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .event-card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .event-match-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    background: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.9);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* ── Details grid ── */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .detail-cell {
+    background: #fff;
+    padding: 14px 16px;
+  }
+  .detail-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .detail-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .detail-value.green { color: var(--green-mid); }
+
+  /* ── Description ── */
+  .event-body {
+    padding: 1.25rem 1.5rem;
+  }
+  .event-body p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 1rem;
+  }
+  .event-body p:last-child { margin-bottom: 0; }
+
+  /* ── Meetup tip ── */
+  .meetup-tip {
+    background: var(--green-light);
+    border-left: 3px solid var(--green-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 1rem 0;
+    font-size: 14px;
+    color: #1a4022;
+    line-height: 1.6;
+  }
+  .meetup-tip strong { font-weight: 600; }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 2rem 1.5rem;
+    border-top: 0.5px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">⚽ 2026 Adventures</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Journal</a>
+    <a href="connect.html" class="nav-link">Connect</a>
+    <a href="resources.html" class="nav-link">Resources</a>
+    <a href="events.html" class="nav-link active">Events</a>
+    <a href="https://cshahria.github.io/Career/index.html" class="nav-link" target="_blank" rel="noopener">Career ↗</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Fan Watch Parties · San Jose</p>
+  <h1>Match Schedule Updates</h1>
+  <p class="hero-sub">Bay Area Stadium Operations & Watch Points</p>
+</div>
+
+<main>
+
+  <div class="event-card">
+    <div class="event-card-header">
+      <div class="ball-icon">🏟️</div>
+      <div style="flex:1;">
+        <h2>Bay Area Match Service Days</h2>
+        <span class="event-match-badge">Fan Operations Schedule</span>
+      </div>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-cell">
+        <div class="detail-label">Match 1</div>
+        <div class="detail-value">Saturday, June 13</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Match 2</div>
+        <div class="detail-value">Friday, June 19</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Match 3</div>
+        <div class="detail-value">Monday, June 22</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Match 4</div>
+        <div class="detail-value">Thursday, June 25</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Match 5</div>
+        <div class="detail-value">Sunday, June 28</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Match 6</div>
+        <div class="detail-value">Wednesday, July 1</div>
+      </div>
+    </div>
+
+    <div class="event-body">
+      <p>Operational coordination is vital across all six match dates. Please refer directly to the Resources page for the latest synchronized team transit timelines and group schedules.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>A personal journal · Shared with family & friends · Not for public distribution</p>
+  <p style="margin-top: 5px; font-weight: 600; font-size: 11px; color: #a0a0a0;">This is a personal standalone site and is not affiliated with, endorsed by, or connected to FIFA or the World Cup tournament.</p>
+</footer>
+
+</body>
+</html>

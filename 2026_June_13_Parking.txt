@@ -1,0 +1,67 @@
+## Executive Summary: VTA Light Rail Parking & Commute Strategy
+
+This revised strategy removes **Old Ironsides** due to the hard security perimeter restrictions during the World Cup matches. To optimize the commute for Fan Operations, transit plans must adapt to strict station locations, real-world station counts, and precise parking rules.
+
+### Key Insights
+
+* **Station with the Least Number of Stops (Active):** **Lick Mill Station** (Eastbound from Mountain View) and **Champion Station** (Westbound from Alum Rock) are physically closest to the stadium property footprint. However, **Great America Station** remains the mandatory, direct event drop-off point. Looking strictly at viable park-and-ride options, **River Oaks** sits just 4 stops away from the stadium line.
+* **Station with Most Historical Parking:** **Capitol Station** (951 spaces) and **Ohlone/Chynoweth** (549 spaces) in South San Jose offer the largest parking footprints system-wide to guarantee a spot on high-volume match days.
+* **Milpitas Transit Center Fee Note:** The parking facility located at **1755 S. Milpitas Blvd.** is an intermodal hub shared with BART. Because it is a commuter garage structure, **it charges a $3 daily parking fee** managed via the Passport Transit app. This fee is mandatory for all vehicles parked in the structure on game days.
+
+---
+
+## 10 Concise Light Rail Parking Options
+
+*Note: All "Stops to Stadium" and "Duration" metrics measure transit explicitly to Great America Station.*
+
+| # | Station Name & Address | Line / Transfers | Stops to Stadium | Historical Availability | Duration | Fee / Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| **1** | **Milpitas Transit Center**<br>
+
+<br>1755 S. Milpitas Blvd, Milpitas | Orange / Direct | 6 stops | High (435 spaces) | ~14 mins | **$3 Fee.** Reliable hub with a large garage structure. |
+| **2** | **Hostetter**<br>
+
+<br>1531 N. Capitol Ave, San Jose | Orange / Direct | 8 stops | Moderate (100 spaces) | ~20 mins | **Free.** Highly practical East San Jose starting option. |
+| **3** | **Penitencia Creek**<br>
+
+<br>842 N. Capitol Ave, San Jose | Orange / Direct | 10 stops | Moderate (50 spaces) | ~25 mins | **Free.** Good residential lot access from East San Jose. |
+| **4** | **Alum Rock**<br>
+
+<br>305 S. Capitol Ave, San Jose | Orange / Direct | 12 stops | Moderate (110 spaces) | ~30 mins | **Free.** Southern terminus of the Orange Line. |
+| **5** | **River Oaks**<br>
+
+<br>3331 N. 1st St, San Jose | Blue/Green ➔ No transfer needed | 4 stops | Low (26 spaces) | ~10 mins | **Free.** Closest active Park & Ride, but lot fills instantly. |
+| **6** | **Winchester**<br>
+
+<br>2400 Winchester Blvd, Campbell | Green ➔ Transfer at Tasman | 21 stops | High (Large lot) | ~48 mins | **Free.** Major West Valley anchor point. |
+| **7** | **Bascom**<br>
+
+<br>2051 Southwest Expwy, San Jose | Green ➔ Transfer at Tasman | 18 stops | Moderate (102 spaces) | ~40 mins | **Free.** Convenient central alternative. |
+| **8** | **Curtner**<br>
+
+<br>602 Curtner Ave, San Jose | Blue ➔ Transfer at Tasman | 15 stops | High (474 spaces) | ~35 mins | **Free.** Solid capacity south of downtown. |
+| **9** | **Capitol**<br>
+
+<br>600 W. Capitol Expwy, San Jose | Blue ➔ Transfer at Tasman | 19 stops | Excellent (951 spaces) | ~43 mins | **Free.** The safest option against lots filling up. |
+| **10** | **Ohlone/Chynoweth**<br>
+
+<br>5340 Terner Way, San Jose | Blue ➔ Transfer at Tasman | 17 stops | Excellent (549 spaces) | ~38 mins | **Free.** Massive South Valley lot option. |
+
+---
+
+## Saturday, June 13 Shift Logistics & Group Commute Strategy
+
+For the opening match on Saturday, June 13 (Qatar vs. Switzerland, 12:00 PM PT kickoff), matching up with John depends entirely on your respective shift assignments.
+
+### Option A: The 05:48 AM "First Train" Launch
+
+* **Schedule Check:** VTA Saturday light rail service begins rolling across the system between 5:00 AM and 5:30 AM. A **05:48 AM departure** from a major point like Hostetter or Milpitas Transit Center is fully operational.
+* **Commute Profile:** At this hour, the trains are completely clear of fans. You and John will arrive at Great America Station around **06:02 AM to 06:15 AM**. This timing is perfect if your shift starts at 6:30 AM or if you have early-morning compound setup details.
+
+### Option B: The 08:00 AM Shift Strategy (Group Preference)
+
+If John’s assignment doesn't start until 08:00 AM, taking the 05:48 AM train will force him to wait at the stadium perimeter for nearly two hours. To coordinate a smooth group commute that respects everyone's morning schedule:
+
+* **Target Meetup & Boarding:** Meet John at the platform between **07:10 AM and 07:20 AM**.
+* **Arrival Window:** This puts your group at Great America Station by **07:35 AM – 07:45 AM**. This leaves a comfortable 15-minute window to clear volunteer screening, check in at Fan Operations, and prepare for the 08:00 AM shift.
+* **Crowd Status:** Because gates open 3 hours prior to kickoff (9:00 AM), general ticket holders will not yet be flooding the transit system at 7:15 AM. You and John will still get a quiet, stress-free group ride together before the fan rush begins.

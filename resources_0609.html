@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources · FIFA World Cup 2026 Bay Area</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green-dark: #0d3b1f;
+    --green-mid: #1a5c32;
+    --green-accent: #2d8c50;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --cream: #faf8f3;
+    --ink: #1a1a18;
+    --ink-mid: #3d3d38;
+    --ink-light: #7a7a72;
+    --border: rgba(26,26,24,0.12);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Source Sans 3', sans-serif;
+  }
+  body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; min-height: 100vh; }
+
+  /* ── NAV ── */
+  .site-nav { background: var(--green-dark); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 52px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-brand { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--gold-light); text-decoration: none; }
+  .nav-links { display: flex; }
+  .nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 1rem; height: 52px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .nav-link:hover { color: #fff; }
+  .nav-link.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: var(--green-dark);
+    padding: 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 80px); }
+  .page-header-inner { max-width: 780px; margin: 0 auto; position: relative; }
+  .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .page-title { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; color: #fff; line-height: 1.1; }
+  .page-subtitle { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 0.5rem; }
+
+  /* ── MAIN ── */
+  .container { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* ── MATCH TABLE ── */
+  .match-table-wrap {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .match-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .match-table thead tr { background: var(--green-mid); }
+  .match-table thead th { padding: 10px 14px; text-align: left; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.7); white-space: nowrap; }
+  .match-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  .match-table tbody tr:last-child { border-bottom: none; }
+  .match-table tbody tr:hover { background: #faf8f3; }
+  .match-table td { padding: 11px 14px; vertical-align: middle; }
+  .match-num { font-size: 11px; color: var(--ink-light); font-weight: 600; }
+  .match-teams { font-weight: 600; color: var(--ink); }
+  .match-group { font-size: 11px; color: var(--ink-light); margin-top: 1px; }
+  .match-time { font-size: 12px; color: var(--ink-mid); white-space: nowrap; }
+  .match-date { font-weight: 600; color: var(--ink-mid); white-space: nowrap; }
+  .my-shift { background: rgba(201,168,76,0.08); }
+  .my-shift td:first-child { border-left: 3px solid var(--gold); }
+  .shift-badge { display: inline-block; font-size: 10px; font-weight: 600; background: var(--gold); color: var(--green-dark); padding: 2px 7px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
+  .shift-hours { font-size: 11px; color: var(--green-mid); font-weight: 600; margin-top: 2px; }
+
+  /* ── RESOURCE LINKS ── */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 2.5rem;
+  }
+  .resource-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .resource-card:hover { border-color: var(--green-accent); box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+  .resource-icon { font-size: 20px; margin-bottom: 4px; }
+  .resource-name { font-size: 14px; font-weight: 600; color: var(--green-dark); }
+  .resource-desc { font-size: 12px; color: var(--ink-light); line-height: 1.45; }
+  .resource-url { font-size: 11px; color: var(--green-accent); margin-top: 4px; word-break: break-all; }
+
+  /* ── FAQ ── */
+  .faq-list { margin-bottom: 2.5rem; }
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1rem 1.25rem;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.15s;
+  }
+  .faq-q:hover { background: #faf8f3; }
+  .faq-arrow { font-size: 18px; color: var(--ink-light); transition: transform 0.25s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a {
+    display: none;
+    padding: 0 1.25rem 1rem;
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+  }
+  .faq-a a { color: var(--green-accent); }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── FOOTER ── */
+  .site-footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--ink-light); border-top: 1px solid var(--border); margin-top: 1rem; }
+
+  @media (max-width: 520px) {
+    .nav-brand { font-size: 0.85rem; }
+    .match-table { font-size: 12px; }
+    .match-table td, .match-table th { padding: 8px 8px; }
+  }
+</style>
+<script data-goatcounter="https://cshahria.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">⚽ 2026 Adventures</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Journal</a>
+    <a href="connect.html" class="nav-link">Connect</a>
+    <a href="resources.html" class="nav-link active">Resources</a>
+    <a href="events.html" class="nav-link">Events</a>
+    <a href="https://cshahria.github.io/Career/index.html" class="nav-link" target="_blank" rel="noopener">Career ↗</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">FIFA World Cup 2026 · Bay Area</p>
+    <h1 class="page-title">Resources & Schedule</h1>
+    <p class="page-subtitle">Match schedule, useful links, and FAQs for family & friends</p>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- ── MATCH SCHEDULE ── -->
+  <h2 class="section-title">🏟 Bay Area Match Schedule · Levi's Stadium, Santa Clara</h2>
+  <div class="match-table-wrap">
+    <table class="match-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Match</th>
+          <th>KO Time (PT)</th>
+          <th>My Shift</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="my-shift">
+          <td class="match-num">—</td>
+          <td class="match-date">Sun Jun 7</td>
+          <td><span class="match-teams">Volunteer Training</span><div class="match-group">Fan Operations · Venue Specific</div></td>
+          <td class="match-time">—</td>
+          <td><div class="shift-badge">My shift</div><div class="shift-hours">9:30 AM – 12:00 PM</div></td>
+        </tr>
+        <tr class="my-shift">
+          <td class="match-num">8</td>
+          <td class="match-date">Sat Jun 13</td>
+          <td><span class="match-teams">Qatar vs. Switzerland</span><div class="match-group">Group B</div></td>
+          <td class="match-time">12:00 PM</td>
+          <td><div class="shift-badge">My shift</div><div class="shift-hours">8:00 AM – 1:00 PM</div></td>
+        </tr>
+        <tr class="my-shift">
+          <td class="match-num">20</td>
+          <td class="match-date">Mon Jun 16</td>
+          <td><span class="match-teams">Austria vs. Jordan</span><div class="match-group">Group J</div></td>
+          <td class="match-time">9:00 PM</td>
+          <td><div class="shift-badge">My shift</div><div class="shift-hours">5:00 PM – 10:00 PM</div></td>
+        </tr>
+        <tr class="my-shift">
+          <td class="match-num">31</td>
+          <td class="match-date">Thu Jun 19</td>
+          <td><span class="match-teams">Turkey vs. Paraguay</span><div class="match-group">Group D</div></td>
+          <td class="match-time">9:00 PM</td>
+          <td><div class="shift-badge">My shift</div><div class="shift-hours">4:00 PM – 9:00 PM</div></td>
+        </tr>
+        <tr class="my-shift">
+          <td class="match-num">44</td>
+          <td class="match-date">Sun Jun 22</td>
+          <td><span class="match-teams">Jordan vs. Algeria</span><div class="match-group">Group J</div></td>
+          <td class="match-time">8:00 PM</td>
+          <td><div class="shift-badge">My shift</div><div class="shift-hours">4:00 PM – 9:00 PM</div></td>
+        </tr>
+        <tr class="my-shift">
+          <td class="match-num">60</td>
+          <td class="match-date">Wed Jun 25</td>
+          <td><span class="match-teams">Paraguay vs. Australia</span><div class="match-group">Group D</div></td>
+          <td class="match-time">7:00 PM</td>
+          <td><div class="shift-badge">My shift</div><div class="shift-hours">3:00 PM – 8:00 PM</div></td>
+        </tr>
+        <tr class="my-shift">
+          <td class="match-num">81</td>
+          <td class="match-date">Wed Jul 1</td>
+          <td><span class="match-teams">Round of 32</span><div class="match-group">Knockout stage · TBD</div></td>
+          <td class="match-time">5:00 PM</td>
+          <td><div class="shift-badge">My shift</div><div class="shift-hours">1:30 PM – 7:30 PM</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── RESOURCE LINKS ── -->
+  <h2 class="section-title">🔗 Useful Links</h2>
+  <div class="resource-grid">
+
+    <a href="https://bayareahostcommittee.com" target="_blank" class="resource-card">
+      <div class="resource-icon">🏙</div>
+      <div class="resource-name">Bay Area Host Committee</div>
+      <div class="resource-desc">Official local organizing body — news, FAQs, fan info, and Bay Area event guide.</div>
+      <div class="resource-url">bayareahostcommittee.com</div>
+    </a>
+
+    <a href="https://bayareahostcommittee.com/faqs" target="_blank" class="resource-card">
+      <div class="resource-icon">❓</div>
+      <div class="resource-name">Official Fan FAQs</div>
+      <div class="resource-desc">Getting to the stadium, tickets, prohibited items, accessibility, and more.</div>
+      <div class="resource-url">bayareahostcommittee.com/faqs</div>
+    </a>
+
+    <a href="https://www.sfbayareafwc26.com" target="_blank" class="resource-card">
+      <div class="resource-icon">⚽</div>
+      <div class="resource-name">SF Bay Area FWC26</div>
+      <div class="resource-desc">Official SF Bay Area FIFA World Cup 2026 site — fan zones, events, and stadium info.</div>
+      <div class="resource-url">sfbayareafwc26.com</div>
+    </a>
+
+    <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/match-schedule-fixtures-results-teams-stadiums" target="_blank" class="resource-card">
+      <div class="resource-icon">🌍</div>
+      <div class="resource-name">FIFA Full Match Schedule</div>
+      <div class="resource-desc">All 104 matches across all 16 host cities — dates, times, and venues.</div>
+      <div class="resource-url">fifa.com</div>
+    </a>
+
+    <a href="https://www.vta.org" target="_blank" class="resource-card">
+      <div class="resource-icon">🚌</div>
+      <div class="resource-name">VTA — Santa Clara Transit</div>
+      <div class="resource-desc">Light rail and bus routes serving Levi's Stadium on match days.</div>
+      <div class="resource-url">vta.org</div>
+    </a>
+
+    <a href="https://www.caltrain.com" target="_blank" class="resource-card">
+      <div class="resource-icon">🚆</div>
+      <div class="resource-name">Caltrain</div>
+      <div class="resource-desc">Train service connecting San Francisco, Peninsula, and San Jose to Santa Clara.</div>
+      <div class="resource-url">caltrain.com</div>
+    </a>
+
+    <a href="https://www.bart.gov" target="_blank" class="resource-card">
+      <div class="resource-icon">🚇</div>
+      <div class="resource-name">BART</div>
+      <div class="resource-desc">Bay Area Rapid Transit — connects East Bay, SF, and SFO. Transfer to VTA for stadium.</div>
+      <div class="resource-url">bart.gov</div>
+    </a>
+
+    <a href="https://www.levisstadium.com/plan-your-visit/" target="_blank" class="resource-card">
+      <div class="resource-icon">🏟</div>
+      <div class="resource-name">Levi's Stadium — Plan Your Visit</div>
+      <div class="resource-desc">Parking, gates, prohibited items, bag policy, and stadium map.</div>
+      <div class="resource-url">levisstadium.com</div>
+    </a>
+
+  </div>
+
+  <!-- ── FAQ ── -->
+  <h2 class="section-title">💬 FAQ for Family & Friends</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How do I get to Levi's Stadium without driving?
+        <span class="faq-arrow">⌄</span>
+      </button>
+      <div class="faq-a">
+        The easiest option is <strong>VTA Light Rail</strong> — take the Mountain View or Winchester line to the Levi's Stadium stop. From San Francisco, take <strong>Caltrain</strong> to Santa Clara station, then connect to VTA. From the East Bay, take <strong>BART</strong> to Fremont or Milpitas and transfer to VTA. On match days, transit services typically run extended and more frequent services. Check the VTA and Caltrain websites for match day timetables.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is there parking at Levi's Stadium?
+        <span class="faq-arrow">⌄</span>
+      </button>
+      <div class="faq-a">
+        Yes, but parking fills quickly and advance purchase is strongly recommended. Lots open several hours before kickoff. Rideshare (Uber/Lyft) drop-off zones are available. Given traffic after matches, public transit is often the faster option for getting home.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What can I bring into the stadium?
+        <span class="faq-arrow">⌄</span>
+      </button>
+      <div class="faq-a">
+        Bags must be clear and no larger than 12" x 6" x 12". Small clutches up to 4.5" x 6.5" are allowed without being clear. No outside food or drinks, no large umbrellas, no selfie sticks, no professional cameras with detachable lenses. Always check the official <a href="https://www.levisstadium.com/plan-your-visit/" target="_blank">Levi's Stadium bag policy</a> before your visit as rules may be updated closer to the tournament.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Where can I watch matches if I don't have tickets?
+        <span class="faq-arrow">⌄</span>
+      </button>
+      <div class="faq-a">
+        The Bay Area Host Committee is organizing official Fan Zones and public viewing events across the region. Check <a href="https://bayareahostcommittee.com" target="_blank">bayareahostcommittee.com</a> for locations and schedules. In the US, matches are broadcast on Fox, FS1, Telemundo, and Peacock depending on the game.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What does a Fan Operations volunteer actually do?
+        <span class="faq-arrow">⌄</span>
+      </button>
+      <div class="faq-a">
+        Fan Operations volunteers help fans navigate the stadium — finding their seats, answering questions, making wayfinding announcements, and keeping the energy positive. Shifts typically start 2–3 hours before kickoff. It's one of the most guest-facing volunteer roles at the tournament.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How do I follow along with the journal?
+        <span class="faq-arrow">⌄</span>
+      </button>
+      <div class="faq-a">
+        Just bookmark this site — <strong>cshahria.github.io/2026fifaworldcup</strong> — and check back after each game day. A new entry gets added after each shift with photos and a write-up. No app, no login needed.
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  A personal journal · Shared with family &amp; friends · Not for public distribution
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    var item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
