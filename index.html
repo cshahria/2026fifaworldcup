@@ -156,9 +156,9 @@
     <div style="display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap;">
       <div style="font-size:2rem; line-height:1;">⚽</div>
       <div style="flex:1; min-width:200px;">
-        <div style="font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:#7a7a72; margin-bottom:4px;">Next Shift</div>
-        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:700; color:#0d3b1f; margin-bottom:4px; line-height:1.25;">Match Day 1 · Fan Operations</h2>
-        <div style="font-size:12px; color:#7a7a72; margin-bottom:1rem;">📍 San Francisco Bay Area Stadium · Sat Jun 13 · Shift 8:00 AM</div>
+        <div style="font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:#7a7a72; margin-bottom:4px;">Next Match · Countdown to Kickoff</div>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:700; color:#0d3b1f; margin-bottom:4px; line-height:1.25;">Switzerland vs. Qatar · Match Day 1</h2>
+        <div style="font-size:12px; color:#7a7a72; margin-bottom:1rem;">📍 San Francisco Bay Area Stadium · Sat 13 Jun · KO 12:00 PT · Shift 08:00–13:00 PT</div>
         <div id="md1-strip" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
           <div style="text-align:center;">
             <span id="md1-d" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
@@ -179,7 +179,7 @@
             <span id="md1-s" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
             <div style="font-size:9px; text-transform:uppercase; letter-spacing:1px; color:#7a7a72;">sec</div>
           </div>
-          <span id="md1-live" style="display:none; background:#2d8c50; color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:20px; letter-spacing:0.5px; margin-left:6px;">⚽ ON SHIFT</span>
+          <span id="md1-live" style="display:none; background:#2d8c50; color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:20px; letter-spacing:0.5px; margin-left:6px;">⚽ MATCH DAY</span>
         </div>
       </div>
     </div>
@@ -188,9 +188,9 @@
 
 <script>
   (function() {
-    // Shift start: Sat Jun 13 2026 08:00 AM PT
-    var target = new Date('2026-06-13T08:00:00-07:00').getTime();
-    // Shift end: 1:00 PM PT (5 hrs)
+    // Kickoff: Sat 13 Jun 2026 12:00 PT
+    var target = new Date('2026-06-13T12:00:00-07:00').getTime();
+    // Shift end: 13:00 PT
     var shiftEnd = new Date('2026-06-13T13:00:00-07:00').getTime();
 
     function pad(n) { return n < 10 ? '0' + n : n; }
@@ -237,7 +237,7 @@
 </script>
 
 <div class="schedule-ribbon">
-  🗓 Next up: Match Day 1 · Saturday June 13 · San Francisco Bay Area Stadium · Qatar vs. Switzerland · KO 12:00 PM
+  🗓 Next up: Match Day 1 · Saturday 13 Jun · San Francisco Bay Area Stadium · Switzerland vs. Qatar · KO 12:00 PT
 </div>
 
 <main class="container">
@@ -308,7 +308,7 @@
     <div class="entry-body">
       <h2 class="entry-title">Opening Kickoff — The World Cup Has Arrived</h2>
       <div class="entry-text">
-        <p>The tournament is officially underway. I arrived at San Pedro Square Market around 10:00 AM Pacific — the opening ceremony was already streaming and the energy was building fast. The first conversation I found myself in was with a group of Germany fans on the phone, passionate and opinionated and already fully in match mode. Then came the Mexico fans. A lot of Mexico fans. The atmosphere at San Pedro Square was vibrant in the best possible way — it felt like the city actually showed up.</p>
+        <p>The tournament is officially underway. I arrived at San Pedro Square Market around 10:00 — the opening ceremony was already streaming and the energy was building fast. Early on I got a call from a colleague based in Frankfurt — a quick check-in from a fellow German football fan, curious about the atmosphere and already following the match closely from across the Atlantic. Then came the Mexico fans. A lot of Mexico fans. The atmosphere at San Pedro Square was vibrant in the best possible way — it felt like the city actually showed up.</p>
         <p>It was hot. 35°C — that's 95°F — and barely a cloud in the sky. No shade-seeking here, just full sun and the kind of heat that makes cold drinks disappear fast. Nobody seemed to mind.</p>
         <p>The crowd wasn't just fans either. Reporters were everywhere. Mayor Matt Mahan was there. The president of the Bay Area World Cup committee made an appearance. News anchors, cameras, official-looking lanyards. There was a real sense that this was a civic moment, not just a watch party.</p>
         <p>The match result — a 2–0 victory — drew some pointed commentary from the German press. But from where I was standing, surrounded by supporters who've been waiting years for this, the final score felt almost secondary. This was a celebration. The fans were happy. The World Cup is here.</p>
@@ -317,7 +317,8 @@
         <p class="gear-title">🌟 Highlights from the day</p>
         <div class="gear-items">
           <span class="gear-tag">San Pedro Square Market watch party</span>
-          <span class="gear-tag">Germany fans · Mexico fans</span>
+          <span class="gear-tag">Frankfurt colleague call</span>
+          <span class="gear-tag">Mexico fans everywhere</span>
           <span class="gear-tag">Mayor Matt Mahan in attendance</span>
           <span class="gear-tag">Bay Area committee president</span>
           <span class="gear-tag">News anchors &amp; media crews</span>
@@ -699,7 +700,7 @@
           <span class="upcoming-desc">Fan Operations Venue Training — Completed ✓</span>
         </div>
         <div class="upcoming-right">
-          <span class="shift-time">9:30 AM – 12:00 PM</span>
+          <span class="shift-time">09:30–12:00 PT</span>
         </div>
       </li>
 
@@ -707,10 +708,10 @@
         <div class="upcoming-dot next"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Sat Jun 13</span>
-          <span class="upcoming-desc">Match #8 — Qatar vs. Switzerland · KO 12:00 PM</span>
+          <span class="upcoming-desc">Match #8 — Switzerland vs. Qatar · KO 12:00 PT</span>
         </div>
         <div class="upcoming-right">
-          <span class="shift-time">Shift 8:00 AM – 1:00 PM</span>
+          <span class="shift-time">Shift 08:00–13:00 PT</span>
           <span class="upcoming-badge">Next</span>
         </div>
       </li>
@@ -719,10 +720,10 @@
         <div class="upcoming-dot"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Mon Jun 16</span>
-          <span class="upcoming-desc">Match #20 — Austria vs. Jordan · KO 8:59 PM</span>
+          <span class="upcoming-desc">Match #20 — Austria vs. Jordan · KO 20:59 PT</span>
         </div>
         <div class="upcoming-right">
-          <span class="shift-time">Shift 5:00 PM – 10:00 PM</span>
+          <span class="shift-time">Shift 17:00–22:00 PT</span>
         </div>
       </li>
 
@@ -730,10 +731,10 @@
         <div class="upcoming-dot"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Thu Jun 19</span>
-          <span class="upcoming-desc">Match #31 — Turkey vs. Paraguay · KO 8:59 PM</span>
+          <span class="upcoming-desc">Match #31 — Turkey vs. Paraguay · KO 20:59 PT</span>
         </div>
         <div class="upcoming-right">
-          <span class="shift-time">Shift 4:00 PM – 9:00 PM</span>
+          <span class="shift-time">Shift 16:00–21:00 PT</span>
         </div>
       </li>
 
@@ -741,10 +742,10 @@
         <div class="upcoming-dot"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Sun Jun 22</span>
-          <span class="upcoming-desc">Match #44 — Jordan vs. Algeria · KO 8:00 PM</span>
+          <span class="upcoming-desc">Match #44 — Jordan vs. Algeria · KO 20:00 PT</span>
         </div>
         <div class="upcoming-right">
-          <span class="shift-time">Shift 4:00 PM – 9:00 PM</span>
+          <span class="shift-time">Shift 16:00–21:00 PT</span>
         </div>
       </li>
 
@@ -752,10 +753,10 @@
         <div class="upcoming-dot"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Wed Jun 25</span>
-          <span class="upcoming-desc">Match #60 — Paraguay vs. Australia · KO 7:00 PM</span>
+          <span class="upcoming-desc">Match #60 — Paraguay vs. Australia · KO 19:00 PT</span>
         </div>
         <div class="upcoming-right">
-          <span class="shift-time">Shift 3:00 PM – 8:00 PM</span>
+          <span class="shift-time">Shift 15:00–20:00 PT</span>
         </div>
       </li>
 
@@ -763,10 +764,10 @@
         <div class="upcoming-dot"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Wed Jul 1</span>
-          <span class="upcoming-desc">Match #81 — Round of 32 · KO 5:00 PM · Final shift</span>
+          <span class="upcoming-desc">Match #81 — Round of 32 · KO 17:00 PT · Final shift</span>
         </div>
         <div class="upcoming-right">
-          <span class="shift-time">Shift 1:30 PM – 7:30 PM</span>
+          <span class="shift-time">Shift 13:30–19:30 PT</span>
         </div>
       </li>
 
