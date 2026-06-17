@@ -26,7 +26,7 @@
   .site-header { background: var(--green-dark); color: #fff; padding: 3rem 2rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
   .site-header::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 80px); }
   .header-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; position: relative; }
-  .site-title { font-family: var(--serif); font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 900; line-height: 1.05; color: #fff; position: relative; }
+  .site-title { font-family: var(--serif); font-size: clamp(1.4rem, 4.2vw, 2.24rem); font-weight: 900; line-height: 1.05; color: #fff; position: relative; }
   .site-title em { font-style: italic; color: var(--gold-light); }
   .site-tagline { font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 0.75rem; position: relative; }
   .stats-bar { background: var(--green-mid); display: flex; justify-content: center; }
@@ -95,15 +95,15 @@
     .photo-slot { min-height: 150px; }
     .stats-bar { flex-wrap: wrap; }
     .stat-item { min-width: 80px; }
-	.site-disclaimer {
+  }
+  .site-disclaimer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
-    border-top: 1px solid #e0e0e0; /* Adds a clean, subtle separation line */
-    font-size: 0.8rem;            /* Makes the text smaller and professional */
-    color: #666666;               /* Muted gray color so it doesn't compete with your content */
-}
-	
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.8rem;
+    color: #cc0000;
+    font-weight: 600;
   }
 </style>
 <script data-goatcounter="https://cshahria.goatcounter.com/count"
@@ -140,7 +140,7 @@
   <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Games to work</div></div>
   <div class="stat-item"><div class="stat-num">87</div><div class="stat-label">Team members</div></div>
   <div class="stat-item"><div class="stat-num">Jul 1</div><div class="stat-label">Final shift</div></div>
-  <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Days logged</div></div>
+  <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Days logged</div></div>
 </div>
 
 <!-- PERSONAL OPINION DISCLAIMER BANNER -->
@@ -149,7 +149,7 @@
 </div>
 
 <!-- ═══════════════════════════════════
-     MATCH DAY 1 COUNTDOWN — June 13
+     MATCH DAY 2 COUNTDOWN — June 19
 ════════════════════════════════════ -->
 <div style="max-width:780px; margin:0 auto 2rem; padding:0 1.5rem;">
   <div style="background:#fff; border:1px solid rgba(26,26,24,0.12); border-left:4px solid #c9a84c; border-radius:12px; padding:1.25rem 1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.05);">
@@ -157,8 +157,8 @@
       <div style="font-size:2rem; line-height:1;">⚽</div>
       <div style="flex:1; min-width:200px;">
         <div style="font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:#7a7a72; margin-bottom:4px;">Next Match · Countdown to Kickoff</div>
-        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:700; color:#0d3b1f; margin-bottom:4px; line-height:1.25;">Austria vs. Jordan · Match #20</h2>
-        <div style="font-size:12px; color:#7a7a72; margin-bottom:1rem;">📍 San Francisco Bay Area Stadium · Mon 16 Jun · KO 20:59 PT · Shift 17:00–22:00 PT</div>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:700; color:#0d3b1f; margin-bottom:4px; line-height:1.25;">Turkey vs. Paraguay · Match #34</h2>
+        <div style="font-size:12px; color:#7a7a72; margin-bottom:1rem;">📍 San Francisco Bay Area Stadium · Thu 19 Jun · KO 20:00 PT · Shift 16:00–21:00 PT</div>
         <div id="md1-strip" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
           <div style="text-align:center;">
             <span id="md1-d" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
@@ -188,10 +188,10 @@
 
 <script>
   (function() {
-    // Kickoff: Mon 16 Jun 2026 20:59 PT
-    var target = new Date('2026-06-16T20:59:00-07:00').getTime();
-    // Shift end: 22:00 PT
-    var shiftEnd = new Date('2026-06-16T22:00:00-07:00').getTime();
+    // Kickoff: Thu 19 Jun 2026 20:00 PT
+    var target = new Date('2026-06-19T20:00:00-07:00').getTime();
+    // Shift end: 21:00 PT
+    var shiftEnd = new Date('2026-06-19T21:00:00-07:00').getTime();
 
     function pad(n) { return n < 10 ? '0' + n : n; }
 
@@ -201,7 +201,6 @@
       var live  = document.getElementById('md1-live');
 
       if (now >= shiftEnd) {
-        // Shift over — hide the whole counter quietly
         document.getElementById('md1-d').textContent = '00';
         document.getElementById('md1-h').textContent = '00';
         document.getElementById('md1-m').textContent = '00';
@@ -210,7 +209,6 @@
       }
 
       if (now >= target) {
-        // On shift
         document.getElementById('md1-d').textContent = '00';
         document.getElementById('md1-h').textContent = '00';
         document.getElementById('md1-m').textContent = '00';
@@ -237,10 +235,99 @@
 </script>
 
 <div class="schedule-ribbon">
-  🗓 Next up: Match #20 · Monday 16 Jun · San Francisco Bay Area Stadium · Austria vs. Jordan · KO 20:59 PT
+  🗓 Next up: Match #34 · Thursday 19 Jun · San Francisco Bay Area Stadium · Turkey vs. Paraguay · KO 20:00 PT
 </div>
 
 <main class="container">
+
+  <!-- ═══════════════════════════════════
+       DAY 6 — June 16 (Second Shift — Austria vs. Jordan)
+       Photos live in: June_16/
+  ════════════════════════════════════ -->
+  <article class="entry">
+    <div class="entry-header">
+      <div class="entry-day">Day 6</div>
+      <div class="entry-meta">
+        <span class="entry-date">Monday, June 16, 2026</span>
+        <span class="entry-location">📍 San Francisco Bay Area Stadium, Santa Clara, CA · Second Shift</span>
+      </div>
+    </div>
+
+<!-- Photos: 2026_061740 set (7 jpegs) -->
+<div class="photo-grid cols-3">
+  <div class="photo-slot" onclick="openLightbox('day6', 0)"><img src="June_16/2026_061740_1.jpeg" alt="June 16 photo 1"></div>
+  <div class="photo-slot" onclick="openLightbox('day6', 1)"><img src="June_16/2026_061740_3.jpeg" alt="June 16 photo 2"></div>
+  <div class="photo-slot" onclick="openLightbox('day6', 2)"><img src="June_16/2026_061740_4.jpeg" alt="June 16 photo 3"></div>
+</div>
+<div class="photo-grid cols-4" style="margin-top:3px">
+  <div class="photo-slot" onclick="openLightbox('day6', 3)"><img src="June_16/2026_061740_5.jpeg" alt="June 16 photo 4"></div>
+  <div class="photo-slot" onclick="openLightbox('day6', 4)"><img src="June_16/2026_061740_6.jpeg" alt="June 16 photo 5"></div>
+  <div class="photo-slot" onclick="openLightbox('day6', 5)"><img src="June_16/2026_061740_7.jpeg" alt="June 16 photo 6"></div>
+  <div class="photo-slot" onclick="openLightbox('day6', 6)"><img src="June_16/2026_061740_9.jpeg" alt="June 16 photo 7"></div>
+</div>
+<!-- Photos: 2026_061737 set (2 jpgs) -->
+<div class="photo-grid cols-2" style="margin-top:3px">
+  <div class="photo-slot" onclick="openLightbox('day6', 7)"><img src="June_16/2026_061737_1.jpg" alt="June 16 photo 8"></div>
+  <div class="photo-slot" onclick="openLightbox('day6', 8)"><img src="June_16/2026_061737_2.jpg" alt="June 16 photo 9"></div>
+</div>
+<!-- Videos: 2026_061743 set (4 clips) -->
+<div class="video-wrap" style="margin-top:3px">
+  <video controls preload="metadata">
+    <source src="June_16/2026_061743_1.mp4" type="video/mp4">
+  </video>
+  <span class="video-label">🎥 Match Day 2 · Clip 1</span>
+</div>
+<div class="video-wrap" style="margin-top:3px">
+  <video controls preload="metadata">
+    <source src="June_16/2026_061743_2.mp4" type="video/mp4">
+  </video>
+  <span class="video-label">🎥 Match Day 2 · Clip 2</span>
+</div>
+<div class="video-wrap" style="margin-top:3px">
+  <video controls preload="metadata">
+    <source src="June_16/2026_061743_3.mp4" type="video/mp4">
+  </video>
+  <span class="video-label">🎥 Match Day 2 · Clip 3</span>
+</div>
+<div class="video-wrap" style="margin-top:3px">
+  <video controls preload="metadata">
+    <source src="June_16/2026_061743_4.mp4" type="video/mp4">
+  </video>
+  <span class="video-label">🎥 Match Day 2 · Clip 4</span>
+</div>
+
+    <div class="entry-body">
+      <h2 class="entry-title">Second Shift — Austria vs. Jordan, Gate B, Fan ID Crew</h2>
+      <div class="entry-text">
+        <p>A morning of chores, and then the anticipation of the second shift kicked in. This time I decided to walk to Westgate Mall — about seven minutes — passing by the new TNT location opening the next day. No bike today. Bus line 57 was already waiting and nearly empty, one of those frequent runs that goes to the stadium every 10–15 minutes. The ride was quick and comfortable, and I arrived at the volunteer lounge around 14:00 PT, a full three hours before my 17:00 shift start.</p>
+        <p>The early arrival paid off. The lounge had sound today — FIFA TV was streaming the Norway vs. Iraq match with full audio, a real luxury compared to silent broadcast we had before. It felt like actually being at a stadium. I settled in, watched, and reconnected with people I'd met before: Linda, Sonia (this time on my actual team), and a new face — Sergio from Napa Valley, sitting front row, clearly a Mexico supporter. He had attended the Switzerland vs. Qatar game as a spectator and this was his first volunteer shift. I gave him a quick rundown of what to expect from Fan ID distribution based on what we did on June 13. He also shared his own story: his first FIFA volunteering experience was in St. Petersburg in 2018, where accommodations were covered and the whole setup was quite different. The comparison was interesting — the Bay Area operation is structured differently, but the energy is just as real.</p>
+        <p>Before we were called up, team lead Dean informed us that the daily photo challenge results would be announced at the volunteer appreciation event on July 6th — selfies, field shots, the works. I had entered the competition too. Shortly after, Eve Mendez called us up for Fan Operations. She also asked for five volunteers willing to take on an additional shift — likely for a prize giveaway at the June 19th Turkey vs. Paraguay game. I put my name in. We'll see if I get selected.</p>
+        <p>From there, the routine clicked into place. Jose led us on a quick tour of the stadium — always great to walk those concourses when it's still empty and the gates are about to open. We posted up near Gate B, same as before, each of us grabbing a box of Fan IDs. This time we organized the cards by holding them by the card rather than the lanyard — a small fix that made untangling significantly easier and the whole process much smoother.</p>
+        <p>I was stationed near the VIP entrance again, paired up with Sergio. We had about 40 minutes before gates opened to sort and stage. When the crowd came in, it was heavy — official attendance around 60,000, possibly higher by the time we finished. The Austrian fans were a great crowd, and I got to put my German to work. A group of Austrians asked me in German what I thought the score would be. I told them Austria 3–0 — partly to encourage them, partly just going with the energy. The actual result: Austria 3–1. Not far off. The Jordan fans were just as warm, and I made sure to stay positive with them without giving anything away. </p>
+        <p>Austria wins 3–1 and leads their group. Already looking ahead to Friday, June 19th — Turkey vs. Paraguay — which will also be the day my cousin from Vancouver and her husband (Turkish descent) come down. I want to stay unbiased, but it should be a great atmosphere either way. Next shift in three days.</p>
+      </div>
+      <div class="gear-list">
+        <p class="gear-title">🌟 Highlights from the day</p>
+        <div class="gear-items">
+          <span class="gear-tag">Bus line 57 · Westgate Mall to Great America</span>
+          <span class="gear-tag">Norway vs. Iraq on FIFA TV — with sound!</span>
+          <span class="gear-tag">Sergio from Napa Valley · 2018 St. Petersburg veteran</span>
+          <span class="gear-tag">Linda &amp; Sonia · volunteer crew reunions</span>
+          <span class="gear-tag">Gate B · VIP entrance · Fan ID crew</span>
+          <span class="gear-tag">Card-first organization — smoother distribution</span>
+          <span class="gear-tag">Austrian fans · German language moment</span>
+          <span class="gear-tag">Austria 3 – Jordan 1</span>
+          <span class="gear-tag">Volunteered for June 19 prize giveaway shift</span>
+          <span class="gear-tag">Daily photo challenge entry · July 6 reveal</span>
+        </div>
+      </div>
+      <div class="energy-row">
+        <span class="energy-label">Energy</span>
+        <div class="energy-track"><div class="energy-fill" style="width:88%"></div></div>
+        <span class="energy-val">8.8 / 10 — second shift, smoother every time ⚽🇦🇹</span>
+      </div>
+    </div>
+  </article>
 
   <!-- ═══════════════════════════════════
        DAY 5 — June 14 (Recovery Day — Fan Watching)
@@ -900,25 +987,25 @@
       </li>
 
       <li class="upcoming-item">
-        <div class="upcoming-dot next"></div>
+        <div class="upcoming-dot"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Mon Jun 16</span>
-          <span class="upcoming-desc">Match #20 — Austria vs. Jordan · KO 20:59 PT</span>
+          <span class="upcoming-desc">Match #20 — Austria vs. Jordan · KO 20:59 PT — Completed ✓</span>
         </div>
         <div class="upcoming-right">
           <span class="shift-time">Shift 17:00–22:00 PT</span>
-          <span class="upcoming-badge">Next</span>
         </div>
       </li>
 
       <li class="upcoming-item">
-        <div class="upcoming-dot"></div>
+        <div class="upcoming-dot next"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Thu Jun 19</span>
-          <span class="upcoming-desc">Match #31 — Turkey vs. Paraguay · KO 20:59 PT</span>
+          <span class="upcoming-desc">Match #34 — Turkey vs. Paraguay · KO 20:00 PT</span>
         </div>
         <div class="upcoming-right">
           <span class="shift-time">Shift 16:00–21:00 PT</span>
+          <span class="upcoming-badge">Next</span>
         </div>
       </li>
 
@@ -977,6 +1064,17 @@
 
 <script>
   var albums = {
+    day6: [
+      'June_16/2026_061740_1.jpeg',
+      'June_16/2026_061740_3.jpeg',
+      'June_16/2026_061740_4.jpeg',
+      'June_16/2026_061740_5.jpeg',
+      'June_16/2026_061740_6.jpeg',
+      'June_16/2026_061740_7.jpeg',
+      'June_16/2026_061740_9.jpeg',
+      'June_16/2026_061737_1.jpg',
+      'June_16/2026_061737_2.jpg'
+    ],
     day5: [
       'June_14/2026_061444_2.jpeg',
       'June_14/2026_061444_3.jpeg',
