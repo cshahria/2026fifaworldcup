@@ -379,9 +379,9 @@
 </nav>
 
 <div class="hero">
-  <p class="hero-eyebrow">Fan Watch Parties · San Jose</p>
-  <h1>Soccer Fever<br><em>at San Pedro Square</em></h1>
-  <p class="hero-sub">Group K · Saturday, June 27, 2026</p>
+  <p class="hero-eyebrow">Fan Watch Parties · San Jose &amp; Santa Clara</p>
+  <h1>Soccer Fever<br><em>Two Days, Two Spots</em></h1>
+  <p class="hero-sub">June 27 at San Pedro Square · July 1 in Santa Clara</p>
 </div>
 
 <main>
@@ -446,38 +446,81 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         Text 408-669-0813
       </a>
-      <a href="https://discord.com/events/1497468492322967604/1511861322302619738" class="contact-pill" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zM11 11V7m4 4V7"/></svg>
-        React on Discord ↗
+
+    </div>
+     </div>
+
+  <!-- ════════════════ EVENT 2 ════════════════ -->
+
+  <div class="event-card" style="margin-top:2rem;">
+
+    <!-- Match header -->
+    <div class="match-header">
+      <div class="match-label">Volunteer Send-Off · Morning Walk &amp; Near-Stadium Watch Party</div>
+      <div class="match-teams">
+        <div class="match-team">
+          <span class="team-flag">🚶</span>
+          <span class="team-name">Morning Walk</span>
+        </div>
+        <div class="match-vs">
+          <span class="vs-text">then</span>
+          <span class="match-time-badge">8:00 – 9:00 AM</span>
+        </div>
+        <div class="match-team">
+          <span class="team-flag">🏟️</span>
+          <span class="team-name">Watch Party</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="detail-grid">
+      <div class="detail-cell">
+        <div class="detail-label">Date</div>
+        <div class="detail-value">Wednesday, July 1</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Walk</div>
+        <div class="detail-value green">8:00 – 9:00 AM</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">I'm around</div>
+        <div class="detail-value">11:00 AM – 12:30 PM</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Admission</div>
+        <div class="detail-value green">Free</div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="event-body">
+      <p>
+        This is my last volunteer shift for the tournament (7/1), and I'd love to send it off right. If anyone's interested, I'll host a morning walk at <a href="https://parks.santaclaracounty.gov/locations/alviso-marina-county-park" target="_blank" rel="noopener">Alviso Marina County Park</a> from 8:00–9:00 AM — free parking, and a nice loop along the bay before the area fills up. I highly recommend the Light Rail or VTA Line 57 instead of driving, since parking and traffic get tight later in the day near the stadium.
+      </p>
+      <div class="meetup-tip">
+        <strong>Walk meeting point:</strong> Alviso Marina County Park main lot. I'll be in the area from 11:00 AM–12:30 PM as well, before heading to my shift for the rest of the day.
+      </div>
+      <img src="images/alviso-marina-map.png" alt="Map showing route from Alviso Marina County Park to the San Francisco Bay Area Stadium" style="width:100%; border-radius:10px; margin:1rem 0; display:block;" />
+      <p>
+        For any World Cup fans in the group: I also have <strong>4 extra free spots</strong> for the near-stadium watch party experience at the Hyatt Regency Santa Clara that same day. Great way to catch the match without fighting stadium crowds.
+      </p>
+      <img src="images/hyatt-watch-party.png" alt="Match Day Watch Party flyer for Hyatt Regency Santa Clara, all match days June through July" style="width:100%; border-radius:10px; margin:1rem 0; display:block;" />
+      <p>
+        Details: <a href="https://www.eventbrite.com/e/match-day-watch-party-at-hyatt-regency-santa-clara-tickets-1989154034263" target="_blank" rel="noopener">Match Day Watch Party at Hyatt Regency Santa Clara</a> — Wed, July 1, starting 9:00 AM.
+      </p>
+      <p>
+        Let me know if you want one of the 4 spots and I'll set up a Discord event for it.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-row">
+      <a href="sms:4086690813" class="contact-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text 408-669-0813
       </a>
     </div>
-
-    <!-- Interest list -->
-    <div class="interest-section">
-      <div class="interest-heading">
-        Who's in?
-        <span class="interest-count" id="interest-count">0</span>
-      </div>
-      <p class="interest-sub">Add your name — the list updates right here. No account needed.</p>
-      <div class="interest-form">
-        <input
-          class="interest-input"
-          id="interest-input"
-          type="text"
-          placeholder="Your name"
-          maxlength="40"
-          autocomplete="off"
-        />
-        <button class="interest-btn" id="interest-btn" onclick="addName()">I'm in ✓</button>
-      </div>
-      <div class="interest-names" id="interest-names">
-        <span class="empty-state">No one yet — be the first!</span>
-      </div>
-      <div class="interest-msg" id="interest-msg"></div>
-    </div>
-
-  </div>
-
 </main>
 
 <footer>
@@ -487,81 +530,40 @@
 
 <script>
 (function() {
-  var STORAGE_KEY = 'watchparty_jun27_attendees';
+  var KEYS = { 1: 'watchparty_jun27_rsvp', 2: 'watchparty_jul1_rsvp' };
+  var LABELS = { 1: 'See you June 27. 🎉', 2: 'See you July 1! 🎉' };
 
-  function getNames() {
+  function getCount(id) {
     try {
-      var raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch(e) { return []; }
+      var raw = localStorage.getItem(KEYS[id]);
+      return raw === '1' ? 1 : 0;
+    } catch(e) { return 0; }
   }
 
-  function saveNames(arr) {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); } catch(e) {}
-  }
-
-  function render() {
-    var names = getNames();
-    var container = document.getElementById('interest-names');
-    var countEl = document.getElementById('interest-count');
-    countEl.textContent = names.length;
-
-    if (names.length === 0) {
-      container.innerHTML = '<span class="empty-state">No one yet — be the first!</span>';
-      return;
-    }
-
-    container.innerHTML = names.map(function(n) {
-      var initials = n.trim().split(/\s+/).map(function(w){ return w[0]; }).join('').toUpperCase().slice(0, 2);
-      return '<div class="interest-name-chip">'
-           + '<div class="chip-avatar">' + initials + '</div>'
-           + escapeHtml(n)
-           + '</div>';
-    }).join('');
-  }
-
-  function escapeHtml(str) {
-    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  window.addName = function() {
-    var input = document.getElementById('interest-input');
-    var msg   = document.getElementById('interest-msg');
-    var btn   = document.getElementById('interest-btn');
-    var name  = input.value.trim();
-
-    if (!name) { msg.textContent = 'Type your name above.'; return; }
-
-    var names = getNames();
-
-    // Duplicate check (case-insensitive)
-    var isDupe = names.some(function(n){ return n.toLowerCase() === name.toLowerCase(); });
-    if (isDupe) {
-      msg.textContent = name + ' is already on the list!';
-      return;
-    }
-
-    names.push(name);
-    saveNames(names);
-    render();
-
-    input.value = '';
-    msg.textContent = 'You\'re in, ' + name + '! See you June 27. 🎉';
-    btn.textContent = 'Added ✓';
-    btn.disabled = true;
-    setTimeout(function() {
-      btn.textContent = 'I\'m in ✓';
+  function render(id) {
+    var has = getCount(id);
+    var countEl = document.getElementById('interest-count-' + id);
+    var btn = document.getElementById('interest-btn-' + id);
+    countEl.textContent = has ? 1 : 0;
+    if (has) {
+      btn.textContent = 'Added ✓';
+      btn.disabled = true;
+    } else {
+      btn.textContent = "I'm in ✓";
       btn.disabled = false;
-      msg.textContent = '';
-    }, 2500);
+    }
+  }
+
+  window.rsvp = function(id) {
+    try { localStorage.setItem(KEYS[id], '1'); } catch(e) {}
+    render(id);
+    var msg = document.getElementById('interest-msg-' + id);
+    msg.textContent = LABELS[id];
+    setTimeout(function() { msg.textContent = ''; }, 2500);
   };
 
-  // Allow Enter key
-  document.getElementById('interest-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') window.addName();
-  });
-
-  render();
+  render(1);
+  render(2);
 })();
 </script>
 </body>
