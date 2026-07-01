@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trophy Day Highlights · June 30</title>
+    
+    <!-- GoatCounter Analytics Tracking -->
+    <script data-goatcounter="https://cshahria.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #161920;
+            --text-color: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-color: #ffd700;
+            --warning-border: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .disclaimer-box {
+            margin-top: 24px;
+            padding: 16px;
+            background: rgba(239, 68, 68, 0.07);
+            border-left: 4px solid var(--warning-border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .disclaimer-box p {
+            margin: 0 0 12px 0;
+        }
+
+        .disclaimer-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-notice {
+            color: #fca5a5;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🎥 Trophy Day Highlights</h1>
+        <p>Volunteer Journal · Fan Operations Team · June 30, 2026</p>
+    </header>
+
+    <!-- Video Element set to Autoplay (Muted to ensure browsers permit autoplay) -->
+    <div class="video-wrapper">
+        <video id="mainVideo" controls autoplay muted playsinline preload="auto">
+            <source src="./June_30/trophy_day_June_30.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Required Sharing Disclaimers -->
+    <div class="disclaimer-box">
+        <p>⚠️ <strong>PERSONAL JOURNAL</strong> — All content on this site reflects my own personal opinions and experiences only. This journal is <strong>not affiliated with, endorsed by, or representative of FIFA, the FIFA World Cup 2026 competition, or any official organizing body.</strong> Per volunteer social media guidelines, views expressed here are solely my own.</p>
+        <p class="highlight-notice">🔒 No operational details posted. Accreditation should not be visible. Please do not share.</p>
+    </div>
+</div>
+
+<script>
+    // Modern browsers require video to be muted to autoplay. 
+    // This listener unmutes the video on the very first user interaction if they tap anywhere.
+    document.addEventListener('click', function() {
+        const video = document.getElementById('mainVideo');
+        if (video && video.muted) {
+            video.muted = false;
+        }
+    }, { once: true });
+</script>
+
+</body>
+</html>
