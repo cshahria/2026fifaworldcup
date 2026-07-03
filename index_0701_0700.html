@@ -132,14 +132,14 @@
 <header class="site-header">
   <p class="header-eyebrow">⚽ World Cup 2026 · Bay Area</p>
   <h1 class="site-title">San Francisco Bay Area<br><em>World Cup Volunteer Experience</em></h1>
-  <p class="site-tagline">Volunteer journal · Fan Operations Team · 6 games worked · June–July 2026</p>
+  <p class="site-tagline">Volunteer journal · Fan Operations Team · 6 games · June–July 2026</p>
 </header>
 
 <div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">6/6</div><div class="stat-label">Shifts worked</div></div>
+  <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Games to work</div></div>
   <div class="stat-item"><div class="stat-num">87</div><div class="stat-label">Team members</div></div>
-  <div class="stat-item"><div class="stat-num">Jul 1</div><div class="stat-label">Last shift</div></div>
-  <div class="stat-item"><div class="stat-num">11</div><div class="stat-label">Logs published</div></div>
+  <div class="stat-item"><div class="stat-num">Jul 1</div><div class="stat-label">Final shift</div></div>
+  <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Logs published</div></div>
 </div>
 
 <!-- PERSONAL OPINION DISCLAIMER BANNER -->
@@ -148,16 +148,16 @@
 </div>
 
 <!-- ═══════════════════════════════════
-     WORLD CUP FINAL COUNTDOWN — updated July 2
+     FINAL SHIFT COUNTDOWN — updated June 26
 ════════════════════════════════════ -->
 <div style="max-width:780px; margin:0 auto 2rem; padding:0 1.5rem;">
   <div style="background:#fff; border:1px solid rgba(26,26,24,0.12); border-left:4px solid #c9a84c; border-radius:12px; padding:1.25rem 1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.05);">
     <div style="display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap;">
-      <div style="font-size:2rem; line-height:1;">🏆</div>
+      <div style="font-size:2rem; line-height:1;">⚽</div>
       <div style="flex:1; min-width:200px;">
-        <div style="font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:#7a7a72; margin-bottom:4px;">Countdown to the Final</div>
-        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:700; color:#0d3b1f; margin-bottom:4px; line-height:1.25;">FIFA World Cup 2026 Final</h2>
-        <div style="font-size:12px; color:#7a7a72; margin-bottom:1rem;">📍 MetLife Stadium, East Rutherford, NJ · Sun 19 Jul · KO 12:00 PT</div>
+        <div style="font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:2px; color:#7a7a72; margin-bottom:4px;">Next Match · Countdown to Kickoff</div>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:1.2rem; font-weight:700; color:#0d3b1f; margin-bottom:4px; line-height:1.25;">Round of 32 · Match #81</h2>
+        <div style="font-size:12px; color:#7a7a72; margin-bottom:1rem;">📍 San Francisco Bay Area Stadium · Wed 1 Jul · KO 17:00 PT · Shift 13:30–19:30 PT</div>
         <div id="md1-strip" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
           <div style="text-align:center;">
             <span id="md1-d" style="font-family:'Playfair Display',Georgia,serif; font-size:1.8rem; font-weight:700; color:#c9a84c; line-height:1;">--</span>
@@ -187,8 +187,10 @@
 
 <script>
   (function() {
-    // Kickoff: Sun 19 Jul 2026 12:00 PT
-    var target = new Date('2026-07-19T12:00:00-07:00').getTime();
+    // Kickoff: Wed 1 Jul 2026 17:00 PT
+    var target = new Date('2026-07-01T17:00:00-07:00').getTime();
+    // Shift end: 19:30 PT
+    var shiftEnd = new Date('2026-07-01T19:30:00-07:00').getTime();
 
     function pad(n) { return n < 10 ? '0' + n : n; }
 
@@ -196,6 +198,14 @@
       var now = Date.now();
       var strip = document.getElementById('md1-strip');
       var live  = document.getElementById('md1-live');
+
+      if (now >= shiftEnd) {
+        document.getElementById('md1-d').textContent = '00';
+        document.getElementById('md1-h').textContent = '00';
+        document.getElementById('md1-m').textContent = '00';
+        document.getElementById('md1-s').textContent = '00';
+        return;
+      }
 
       if (now >= target) {
         document.getElementById('md1-d').textContent = '00';
@@ -224,98 +234,16 @@
 </script>
 
 <div class="schedule-ribbon">
-  🗓 All six shifts complete · Next up: Volunteer Appreciation Event · Mon 6 Jul · PayPal Park, 18:00–22:00 PT
+  🗓 Next up: Match #81 · Wednesday 1 Jul · San Francisco Bay Area Stadium · Round of 32 · KO 17:00 PT
 </div>
 
 <div style="max-width:780px; margin:1.5rem auto 0; padding:0 1.5rem;">
   <p style="font-size:14px; color:#3d3d38; line-height:1.7; text-align:center; font-style:italic;">
-    Six shifts down. July 1st closed it out with a sold-out USA vs. Bosnia crowd, six hours on the megaphone, and a proper send-off. Next stop: the volunteer appreciation event on July 6th — then it's all eyes on the Final at MetLife Stadium on July 19th.
+    Trophy day on June 30th — stood feet away from the actual World Cup trophy, took team photos with the volunteer crew, and got one last preview of USA vs. Bosnia before tomorrow. One shift left. July 1st, Round of 32 — bittersweet countdown is on.
   </p>
 </div>
 
 <main class="container">
-
-  <!-- ═══════════════════════════════════
-       SHIFT 6 — July 1 (Final Shift, USA vs. Bosnia, Round of 32)
-       Photos live in: July_1/
-  ════════════════════════════════════ -->
-  <article class="entry">
-    <div class="entry-header">
-      <div class="entry-day">Shift 6</div>
-      <div class="entry-meta">
-        <span class="entry-date">Wednesday, July 1, 2026</span>
-        <span class="entry-location">📍 San Francisco Bay Area Stadium, Santa Clara, CA · Sixth & Final Shift · USA vs. Bosnia and Herzegovina</span>
-      </div>
-    </div>
-
-<div class="photo-grid cols-4">
-  <div class="photo-slot" onclick="openLightbox('shift6', 0)"><img src="./July_1/2026_070228_40.png" alt="July 1 photo 1"></div>
-  <div class="photo-slot" onclick="openLightbox('shift6', 1)"><img src="./July_1/2026_070228_41.png" alt="July 1 photo 2"></div>
-  <div class="photo-slot" onclick="openLightbox('shift6', 2)"><img src="./July_1/2026_070229_3.jpeg" alt="July 1 photo 3"></div>
-  <div class="photo-slot" onclick="openLightbox('shift6', 3)"><img src="./July_1/2026_070229_4.jpeg" alt="July 1 photo 4"></div>
-</div>
-<div class="photo-grid cols-3" style="margin-top:3px">
-  <div class="photo-slot" onclick="openLightbox('shift6', 4)"><img src="./July_1/2026_070229_5.jpeg" alt="July 1 photo 5"></div>
-  <div class="photo-slot" onclick="openLightbox('shift6', 5)"><img src="./July_1/2026_070252_14.png" alt="July 1 photo 6"></div>
-  <div class="photo-slot" onclick="openLightbox('shift6', 6)"><img src="./July_1/2026_070252_15.png" alt="July 1 photo 7"></div>
-</div>
-
-<div class="video-wrap" style="margin-top:3px">
-  <video controls preload="metadata">
-    <source src="./July_1/2026_070232_1.mp4" type="video/mp4">
-  </video>
-  <span class="video-label">🎥 Final Shift · Clip 1</span>
-</div>
-<div class="video-wrap" style="margin-top:3px">
-  <video controls preload="metadata">
-    <source src="./July_1/2026_070232_2.mp4" type="video/mp4">
-  </video>
-  <span class="video-label">🎥 Final Shift · Clip 2</span>
-</div>
-<div class="video-wrap" style="margin-top:3px">
-  <video controls preload="metadata">
-    <source src="./July_1/2026_070232_3.mp4" type="video/mp4">
-  </video>
-  <span class="video-label">🎥 Final Shift · Clip 3</span>
-</div>
-<div class="video-wrap" style="margin-top:3px">
-  <video controls preload="metadata">
-    <source src="./July_1/2026_070232_4.mp4" type="video/mp4">
-  </video>
-  <span class="video-label">🎥 Final Shift · Clip 4</span>
-</div>
-
-    <div class="entry-body">
-      <h2 class="entry-title">Final Shift — Gate Duty, a Megaphone, and a Sold-Out Send-Off</h2>
-      <div class="entry-text">
-        <p>July 1st was it — the last shift at San Francisco Bay Area Stadium. I got there earlier than planned, around 10:30am instead of noon, in time to catch the end of England vs. DR Congo at the Hyatt Regency across the street, which was open to the public and packed with good vibes from both Bosnian and American fans. England came back from a goal down, with Kane scoring twice to seal it. Since kickoff for USA vs. Bosnia wasn't until 5:00pm — one of the latest starts of the tournament — I grabbed lunch first, knowing dinner would come at the tail end of the shift. By all accounts this was a sellout at the stadium.</p>
-        <p>At the volunteer center I caught up with Adrian, who'd worked San Pedro Square for Mexico vs. Ecuador. The Mexican fans reportedly kept the Ecuadorian team up all night, and a formal complaint was apparently filed. The bigger news out of that game was tragic — three people suffocated during celebrations in Mexico City, and there were also altercations and an unlawful assembly reported near a federal building there. It was a sobering topic of conversation before the shift got going.</p>
-        <p>I had a scheduled call with two colleagues from Frankfurt while waiting to check in — one, a good friend from Hungary, caught me up on his family and his two teenage sons, and I floated the idea of them volunteering at the 2030 World Cup across Portugal, Morocco, and Spain. He also shared some sharp insights on AI vulnerability management tooling and the manual steps still involved. The other colleague, calling in from Freiburg, Germany, is a Bosnia fan and was watching the match with his family early in his morning.</p>
-        <p>This was my first six-hour shift, and my first time not on Fan ID hand-out. Eve gave me the choice, and I opted to stick with Floyd's group — four or five of us, teamed up with Deborah. I carried the megaphone while she held the sign for restricted-item storage and ticket prep. Floyd was easygoing, much like Jose on the Fan ID side. The most common question all day was where to find the hospitality entry — Gate M3 — while the vast majority of fans, Bosnian and American alike, moved through Gate 1. Deborah and I were stationed near the security gates by the light rail station, and the "Welcome to the FIFA 2026 World Cup" sign became an unexpected hit — we handed it off to families and kids for photos all afternoon. The megaphone cut out now and then, maybe wind, maybe the battery.</p>
-        <p>After kickoff we grabbed dinner — veggie option, potato wedges and mushrooms — and I met Ines, up from Fresno with German-French roots, who's planning a move to San Francisco. Added her to the group chat with Sergio and Alex. Around the 65–70 minute mark, with USA already up 2-0, we were called back to the gates to help direct the crowd out — much faster than the arrival, but still a big push. We wrapped up around 8:20pm, and for the first time I waited for the bus without my bike, which took a little longer given the size of the crowd.</p>
-        <p>Six weeks, six shifts, and a genuinely great experience. Jen has already headed back to Zurich, Eve's off to LA, and there's one more get-together — the volunteer appreciation event on July 6th at PayPal Park. But the shifts themselves are done. Whatever the politics of the day, this was a reminder of what it looks like when people from everywhere come together for something fun and peaceful — a good note to end on.</p>
-      </div>
-      <div class="gear-list">
-        <p class="gear-title">🌟 Highlights from the day</p>
-        <div class="gear-items">
-          <span class="gear-tag">First 6-hour shift · first time off Fan ID duty</span>
-          <span class="gear-tag">England d. DR Congo · Hyatt Regency watch party</span>
-          <span class="gear-tag">Sold-out stadium · USA vs. Bosnia</span>
-          <span class="gear-tag">Adrian · San Pedro Square · Mexico vs. Ecuador</span>
-          <span class="gear-tag">Deborah · Floyd · gate & megaphone duty</span>
-          <span class="gear-tag">Ines · Fresno → San Francisco</span>
-          <span class="gear-tag">Gate M3 hospitality wayfinding</span>
-          <span class="gear-tag">Frankfurt call · Hungary + Freiburg colleagues</span>
-          <span class="gear-tag">Six shifts complete — appreciation event Jul 6 next</span>
-        </div>
-      </div>
-      <div class="energy-row">
-        <span class="energy-label">Energy</span>
-        <div class="energy-track"><div class="energy-fill" style="width:95%"></div></div>
-        <span class="energy-val">9.5 / 10 — sold-out send-off, six shifts down ⚽🎤</span>
-      </div>
-    </div>
-  </article>
 
   <!-- ═══════════════════════════════════
        TROPHY DAY — June 30 (Pre-Shift, Team Photos & Trophy Viewing)
@@ -1456,13 +1384,14 @@
       </li>
 
       <li class="upcoming-item">
-        <div class="upcoming-dot"></div>
+        <div class="upcoming-dot next"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Thu Jun 25</span>
-          <span class="upcoming-desc">Match #60 — Paraguay vs. Australia · KO 19:00 PT — Completed ✓</span>
+          <span class="upcoming-desc">Match #60 — Paraguay vs. Australia · KO 19:00 PT</span>
         </div>
         <div class="upcoming-right">
           <span class="shift-time">Shift 15:00–20:00 PT</span>
+          <span class="upcoming-badge">Next</span>
         </div>
       </li>
 
@@ -1470,22 +1399,10 @@
         <div class="upcoming-dot"></div>
         <div class="upcoming-main">
           <span class="upcoming-date">Wed Jul 1</span>
-          <span class="upcoming-desc">Match #81 — Round of 32, USA vs. Bosnia · KO 17:00 PT · Final shift — Completed ✓</span>
+          <span class="upcoming-desc">Match #81 — Round of 32 (USA vs. Bosnia or 3rd Place Bracket) · KO 17:00 PT · Final shift</span>
         </div>
         <div class="upcoming-right">
           <span class="shift-time">Shift 13:30–19:30 PT</span>
-        </div>
-      </li>
-
-      <li class="upcoming-item">
-        <div class="upcoming-dot next"></div>
-        <div class="upcoming-main">
-          <span class="upcoming-date">Mon Jul 6</span>
-          <span class="upcoming-desc">Volunteer Appreciation Event · PayPal Park — uniform & accreditation required</span>
-        </div>
-        <div class="upcoming-right">
-          <span class="shift-time">18:00–22:00 PT</span>
-          <span class="upcoming-badge">Next</span>
         </div>
       </li>
 
@@ -1511,15 +1428,6 @@
 
 <script>
   var albums = {
-	shift6: [
-	  './July_1/2026_070228_40.png',
-	  './July_1/2026_070228_41.png',
-	  './July_1/2026_070229_3.jpeg',
-	  './July_1/2026_070229_4.jpeg',
-	  './July_1/2026_070229_5.jpeg',
-	  './July_1/2026_070252_14.png',
-	  './July_1/2026_070252_15.png'
-	],
 	trophyday: [
 	'./June_30/2026_063006_Team_1.jpg',
 	'./June_30/2026_063006_Team_2.jpg',
