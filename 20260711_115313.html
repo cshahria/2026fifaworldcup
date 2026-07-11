@@ -235,33 +235,134 @@
   .contact-pill:hover { background: #ebebea; }
   .contact-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
 
-  /* ── Action Box ── */
-  .action-section {
+  /* ── Interest list ── */
+  .interest-section {
     padding: 1.25rem 1.5rem 1.5rem;
     border-top: 0.5px solid var(--border);
+  }
+  .interest-heading {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .interest-count {
+    background: var(--green);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 2px 8px;
+    min-width: 22px;
     text-align: center;
   }
-  .action-sub {
-    font-size: 13px;
+  .interest-sub {
+    font-size: 12px;
     color: var(--muted);
     margin-bottom: 14px;
     line-height: 1.5;
   }
-  .submit-btn {
+  .interest-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .interest-input {
+    flex: 1;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
+    padding: 8px 12px;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 8px;
+    outline: none;
+    background: #fafafa;
+    color: var(--text);
+    transition: border-color 0.15s;
+  }
+  .interest-input:focus { border-color: var(--green-mid); background: #fff; }
+  .interest-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
     font-weight: 600;
-    padding: 10px 24px;
+    padding: 8px 18px;
     background: var(--green);
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.15s;
-    text-decoration: none;
-    display: inline-block;
+    white-space: nowrap;
   }
-  .submit-btn:hover { background: var(--green-mid); }
+  .interest-btn:hover { background: var(--green-mid); }
+  .interest-btn:disabled { opacity: 0.5; cursor: default; }
+  .interest-names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    min-height: 0;
+  }
+  .interest-name-chip {
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--green-light);
+    color: #1a4022;
+    border-radius: 20px;
+    padding: 4px 11px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: chipIn 0.2s ease;
+  }
+  .interest-name-chip .chip-avatar {
+    width: 18px; height: 18px;
+    background: var(--green-mid);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 700; color: #fff;
+    flex-shrink: 0;
+  }
+  .interest-msg {
+    font-size: 12px;
+    color: var(--green-mid);
+    font-weight: 500;
+    margin-top: 8px;
+    min-height: 18px;
+  }
+  @keyframes chipIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .empty-state {
+    font-size: 12px;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 2rem 1.5rem;
+    border-top: 0.5px solid var(--border);
+    position: relative;
+  }
+  footer a { color: inherit; text-decoration: underline; }
+  .career-link {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 50%;
+    transform: translateY(50%);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+  .career-link:hover { opacity: 1; }
 </style>
 </head>
 <body>
@@ -284,23 +385,21 @@
 
 <main>
 
-  <!-- ════════════════ JULY 19 EVENT ════════════════ -->
+
+<!-- ════════════════ EVENT 2 ════════════════ -->
+
   <div class="event-card" style="margin-top:2rem;">
 
     <!-- Match header -->
     <div class="match-header">
-      <div class="match-label">World Cup Final 🏆</div>
+      <div class="match-label">TBD</div>
       <div class="match-teams">
         <div class="match-team">
-          <span class="team-flag">👑</span>
+          <span class="team-flag">🚶</span>
           <span class="team-name">TBD</span>
         </div>
-        <div class="match-vs">
-          <span class="vs-text">VS</span>
-          <div class="match-time-badge">12:00 PT</div>
-        </div>
         <div class="match-team">
-          <span class="team-flag">👑</span>
+          <span class="team-flag">🏟️</span>
           <span class="team-name">TBD</span>
         </div>
       </div>
@@ -309,37 +408,32 @@
     <!-- Details -->
     <div class="detail-grid">
       <div class="detail-cell">
-        <div class="detail-label">Date</div>
-        <div class="detail-value">Sun, July 19</div>
+        <div class="detail-label">TBD</div>
+        <div class="detail-value">TBD</div>
       </div>
       <div class="detail-cell">
-        <div class="detail-label">Kick Off</div>
-        <div class="detail-value green">12:00 PT</div>
+        <div class="detail-label">TBD</div>
+        <div class="detail-value green">TBD</div>
       </div>
       <div class="detail-cell">
-        <div class="detail-label">Venue</div>
-        <div class="detail-value" id="dynamic-venue">Loading...</div>
+        <div class="detail-label">TBD</div>
+        <div class="detail-value">TBD</div>
       </div>
       <div class="detail-cell">
-        <div class="detail-label">Location</div>
-        <div class="detail-value green" id="dynamic-address">Loading...</div>
+        <div class="detail-label">TBD</div>
+        <div class="detail-value green">TBD</div>
       </div>
     </div>
 	
-    <!-- Body -->
+	
+<!-- Body -->
     <div class="event-body">
       <p>
-        The final showdown of the tournament is locked in. We are coordinating location choices seamlessly via live intake data. Check out our tracking venue status updates below.
+        TBD
       </p>
       <div class="meetup-tip">
-        <strong>Confirmed Location:</strong> <span id="venue-leader-tip">Syncing...</span>
+        <strong>TBD</strong> TBD
       </div>      
-    </div>
-
-    <!-- Single Action Button Section -->
-    <div class="action-section">
-      <p class="action-sub">Let us know if you can make it and submit your preferred watch venue setup.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScQfe1HjCv4JO2LfX_wGU7AzXZ9Rni3OXuXjITvieJrSfo0rQ/viewform?usp=header" target="_blank" rel="noopener" class="submit-btn">RSVP & Vote on Venue ↗</a>
     </div>
 
     <!-- Contact -->
@@ -349,7 +443,6 @@
         Text 408-669-0813
       </a>
     </div>
-  </div>
 
 </main>
 
@@ -360,33 +453,40 @@
 
 <script>
 (function() {
-  const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcZ7nRJpTDoJ7fa_RxFZjcpWbQbFDmr86vriDsec8_2mlr9vdULIv1zKVYe5ZGkYOukDEv9IXEYhrw/pub?output=csv';
+  var KEYS = { 1: 'watchparty_jun27_rsvp', 2: 'watchparty_jul1_rsvp' };
+  var LABELS = { 1: 'See you June 27. 🎉', 2: 'See you July 1! 🎉' };
 
-  fetch(csvUrl)
-    .then(res => res.text())
-    .then(text => {
-      const rows = text.split('\n');
-      if (rows.length > 1) {
-        const columns = rows[1].split(',');
-        const chosenVenue = columns[0].replace(/"/g, '').trim();
-        const chosenAddress = columns[1].replace(/"/g, '').trim();
+  function getCount(id) {
+    try {
+      var raw = localStorage.getItem(KEYS[id]);
+      return raw === '1' ? 1 : 0;
+    } catch(e) { return 0; }
+  }
 
-        if(chosenVenue) {
-          document.getElementById('dynamic-venue').textContent = chosenVenue;
-          document.getElementById('venue-leader-tip').textContent = chosenVenue;
-        }
-        if(chosenAddress) {
-          document.getElementById('dynamic-address').textContent = chosenAddress;
-        }
-      }
-    })
-    .catch(err => {
-      console.error('Error loading selection data:', err);
-      // Clean fallback defaults
-      document.getElementById('dynamic-venue').textContent = "San Pedro Square Market";[cite: 2]
-      document.getElementById('dynamic-address').textContent = "7.5 mi - San Jose";[cite: 2]
-      document.getElementById('venue-leader-tip').textContent = "San Pedro Square Market";[cite: 2]
-    });
+  function render(id) {
+    var has = getCount(id);
+    var countEl = document.getElementById('interest-count-' + id);
+    var btn = document.getElementById('interest-btn-' + id);
+    countEl.textContent = has ? 1 : 0;
+    if (has) {
+      btn.textContent = 'Added ✓';
+      btn.disabled = true;
+    } else {
+      btn.textContent = "I'm in ✓";
+      btn.disabled = false;
+    }
+  }
+
+  window.rsvp = function(id) {
+    try { localStorage.setItem(KEYS[id], '1'); } catch(e) {}
+    render(id);
+    var msg = document.getElementById('interest-msg-' + id);
+    msg.textContent = LABELS[id];
+    setTimeout(function() { msg.textContent = ''; }, 2500);
+  };
+
+  render(1);
+  render(2);
 })();
 </script>
 </body>
