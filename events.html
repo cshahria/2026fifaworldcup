@@ -262,6 +262,27 @@
     display: inline-block;
   }
   .submit-btn:hover { background: var(--green-mid); }
+  
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+  footer .career-link {
+    display: block;
+    margin-top: 8px;
+    color: var(--green-mid);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  footer .career-link:hover {
+    text-decoration: underline;
+  }
+  
 </style>
 </head>
 <body>
@@ -329,7 +350,7 @@
     <!-- Body -->
     <div class="event-body">
       <p>
-        The final showdown of the tournament is locked in. We are coordinating location choices seamlessly via live intake data. Check out our tracking venue status updates below.
+        Consider voting for the best public viewing spot on July 19 at 1200 PT. If you can join, great. If not, the vote will still help to decide. Thank you!
       </p>
       <div class="meetup-tip">
         <strong>Confirmed Location:</strong> <span id="venue-leader-tip">Syncing...</span>
@@ -338,8 +359,8 @@
 
     <!-- Single Action Button Section -->
     <div class="action-section">
-      <p class="action-sub">Let us know if you can make it and submit your preferred watch venue setup.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScQfe1HjCv4JO2LfX_wGU7AzXZ9Rni3OXuXjITvieJrSfo0rQ/viewform?usp=header" target="_blank" rel="noopener" class="submit-btn">RSVP & Vote on Venue ↗</a>
+      <p class="action-sub">Please vote!</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScQfe1HjCv4JO2LfX_wGU7AzXZ9Rni3OXuXjITvieJrSfo0rQ/viewform?usp=header" target="_blank" rel="noopener" class="submit-btn">Vote on Venue ↗</a>
     </div>
 
     <!-- Contact -->
@@ -354,7 +375,7 @@
 </main>
 
 <footer>
-  A personal journal · Shared with family &amp; friends · Not for public distribution
+  <p>A personal journal · Shared with family &amp; friends · Not for public distribution</p>
   <a class="career-link" href="https://cshahria.github.io/Career/index.html" target="_blank" rel="noopener">My career site ↗</a>
 </footer>
 
@@ -365,27 +386,35 @@
   fetch(csvUrl)
     .then(res => res.text())
     .then(text => {
-      const rows = text.split('\n');
+      // Clean up hidden carriage returns and split by line
+      const rows = text.replace(/\r/g, '').split('\n');
+      
       if (rows.length > 1) {
-        const columns = rows[1].split(',');
-        const chosenVenue = columns[0].replace(/"/g, '').trim();
-        const chosenAddress = columns[1].replace(/"/g, '').trim();
+        // Splits the row by commas but safely ignores commas nested inside quotation marks
+        const columns = rows[1].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || rows[1].split(',');
+        
+        let chosenVenue = columns[0] ? columns[0].replace(/"/g, '').trim() : '';
+        let chosenAddress = columns[1] ? columns[1].replace(/"/g, '').trim() : '';
 
-        if(chosenVenue) {
-          document.getElementById('dynamic-venue').textContent = chosenVenue;
+        if (chosenVenue) {
+          // If the venue text is long, this cleans up the display title by splitting at the first bracket or dash
+          const displayTitle = chosenVenue.split('(')[0].split('-')[0].trim();
+          document.getElementById('dynamic-venue').textContent = displayTitle;
           document.getElementById('venue-leader-tip').textContent = chosenVenue;
         }
-        if(chosenAddress) {
-          document.getElementById('dynamic-address').textContent = chosenAddress;
+        
+        if (chosenAddress) {
+          document.getElementById('dynamic-address').textContent = chosenAddress.replace(/"/g, '').trim();
+        } else {
+          document.getElementById('dynamic-address').textContent = "Top Voted Location";
         }
       }
     })
     .catch(err => {
-      console.error('Error loading selection data:', err);
-      // Clean fallback defaults
-      document.getElementById('dynamic-venue').textContent = "San Pedro Square Market";[cite: 2]
-      document.getElementById('dynamic-address').textContent = "7.5 mi - San Jose";[cite: 2]
-      document.getElementById('venue-leader-tip').textContent = "San Pedro Square Market";[cite: 2]
+      console.error('Error loading pivot data:', err);
+      document.getElementById('dynamic-venue').textContent = "San Pedro Square Market";
+      document.getElementById('dynamic-address').textContent = "7.5 mi - San Jose";
+      document.getElementById('venue-leader-tip').textContent = "San Pedro Square Market";
     });
 })();
 </script>
