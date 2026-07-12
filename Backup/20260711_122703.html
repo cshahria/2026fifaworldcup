@@ -6,7 +6,7 @@
 <title>Events 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
 <script data-goatcounter="https://cshahria.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 <style>
@@ -183,13 +183,6 @@
     color: var(--text);
     line-height: 1.3;
   }
-  .detail-value a {
-    color: var(--green-mid);
-    text-decoration: none;
-  }
-  .detail-value a:hover {
-    text-decoration: underline;
-  }
   .detail-value.green { color: var(--green-mid); }
 
   /* ── Description ── */
@@ -216,65 +209,6 @@
     line-height: 1.6;
   }
   .meetup-tip strong { font-weight: 600; }
-
-  /* ── Tally Tiles ── */
-  .tally-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 1rem;
-  }
-  .tally-tile {
-    background: #f5f5f3;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 8px;
-    text-align: center;
-  }
-  .tally-count {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 2px;
-  }
-  .tally-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--muted);
-  }
-  .tally-tile.yes { background: #e8f5ec; border-color: rgba(45,122,62,0.2); }
-  .tally-tile.yes .tally-count { color: var(--green-mid); }
-
-  /* ── Rsvp List ── */
-  .rsvp-list-section {
-    padding: 0 1.5rem 1.5rem;
-  }
-  .rsvp-list-title {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .rsvp-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .rsvp-tag {
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: #f1f1f1;
-    border: 0.5px solid var(--border);
-  }
-  .rsvp-tag.attending {
-    background: #e8f5ec;
-    color: #1a5c2a;
-  }
 
   /* ── Contact ── */
   .contact-row {
@@ -405,51 +339,28 @@
       </div>
       <div class="detail-cell">
         <div class="detail-label">Venue</div>
-        <div class="detail-value">Yard House</div>
+        <div class="detail-value" id="dynamic-venue">Loading...</div>
       </div>
       <div class="detail-cell">
         <div class="detail-label">Location</div>
-        <div class="detail-value"><a href="https://maps.app.goo.gl/VTbidCWZbCjrNj8BA" target="_blank" rel="noopener">300 Santana Row Ste 101, San Jose, CA 95128 ↗</a></div>
+        <div class="detail-value green" id="dynamic-address">Loading...</div>
       </div>
     </div>
 	
     <!-- Body -->
     <div class="event-body">
       <p>
-        The plans are locked in for Yard House at Santana Row. Come out, enjoy the game, and catch up with everyone!
+        Consider voting for the best public viewing spot on July 19 at 1200 PT. If you can join, great. If not, the vote will still help to decide. Thank you!
       </p>
-      
       <div class="meetup-tip">
-        <strong>Suggested Arrival:</strong> 11:30 PT to secure a table before kick off at 12:00 PT.
+        <strong>Confirmed Location:</strong> <span id="venue-leader-tip">Syncing...</span>
       </div>      
-
-      <!-- RSVP Tiles -->
-      <div class="tally-container">
-        <div class="tally-tile yes">
-          <div class="tally-count" id="count-yes">0</div>
-          <div class="tally-label">Yes</div>
-        </div>
-        <div class="tally-tile">
-          <div class="tally-count" id="count-maybe">0</div>
-          <div class="tally-label">Maybe</div>
-        </div>
-        <div class="tally-tile">
-          <div class="tally-count" id="count-no">0</div>
-          <div class="tally-label">No</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Active RSVP List Panel -->
-    <div class="rsvp-list-section" id="rsvp-list-wrapper" style="display: none;">
-      <div class="rsvp-list-title">Who's Coming</div>
-      <div class="rsvp-tags" id="rsvp-attendees"></div>
     </div>
 
     <!-- Single Action Button Section -->
     <div class="action-section">
-      <p class="action-sub">Let us know if you can make it!</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQjOdZREh3pPz1L9NnfDAd3GEIR6T0RWp1qO3VwAhUZukhhg/viewform?usp=pp_url&entry.2044826080=Name&entry.966582672=Yes&entry.1499431247=Number" target="_blank" rel="noopener" class="submit-btn">RSVP Here ↗</a>
+      <p class="action-sub">Please vote!</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScQfe1HjCv4JO2LfX_wGU7AzXZ9Rni3OXuXjITvieJrSfo0rQ/viewform?usp=header" target="_blank" rel="noopener" class="submit-btn">Vote on Venue ↗</a>
     </div>
 
     <!-- Contact -->
@@ -470,93 +381,52 @@
 
 <script>
 (function() {
-  // New Form Responses CSV URL
-  const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTnl6EZEG1BbrmRIuXNhfJaPhIr-GkY3QUwY9DtIn_Y1MUVv4UzdCDBNNcz2_e9rtrMqnwQQSwddnGj/pub?output=csv';
-
-  function parseCSV(text) {
-    const rows = [];
-    let row = [];
-    let field = '';
-    let inQuotes = false;
-
-    for (let i = 0; i < text.length; i++) {
-      const c = text[i];
-      if (inQuotes) {
-        if (c === '"') {
-          if (text[i + 1] === '"') { field += '"'; i++; }
-          else { inQuotes = false; }
-        } else {
-          field += c;
-        }
-      } else if (c === '"') {
-        inQuotes = true;
-      } else if (c === ',') {
-        row.push(field); field = '';
-      } else if (c === '\n') {
-        row.push(field); field = '';
-        rows.push(row); row = [];
-      } else if (c === '\r') {
-        // skip
-      } else {
-        field += c;
-      }
-    }
-    if (field.length || row.length) { row.push(field); rows.push(row); }
-    return rows.filter(r => r.some(cell => cell.trim() !== ''));
-  }
+  const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcZ7nRJpTDoJ7fa_RxFZjcpWbQbFDmr86vriDsec8_2mlr9vdULIv1zKVYe5ZGkYOukDEv9IXEYhrw/pub?output=csv';
 
   fetch(csvUrl)
     .then(res => res.text())
     .then(text => {
-      const rows = parseCSV(text);
-      if (rows.length <= 1) return;
+      const rows = text.replace(/\r/g, '').split('\n');
+      
+      if (rows.length > 1) {
+        // Parse columns cleanly, ignoring nested commas inside quotation marks
+        const columns = rows[1].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || rows[1].split(',');
+        
+        // Maps row values from your sheet format
+        let chosenVenue = columns[1] ? columns[1].replace(/"/g, '').trim() : '';
+        let chosenAddress = columns[2] ? columns[2].replace(/"/g, '').trim() : '';
 
-      let yesCount = 0;
-      let noCount = 0;
-      let maybeCount = 0;
-      const attendees = [];
-
-      // Columns layout mapping:
-      // Index 0: Timestamp, Index 1: Name, Index 2: Attending, Index 3: Contact
-      for (let i = 1; i < rows.length; i++) {
-        const name = (rows[i][1] || '').trim();
-        const status = (rows[i][2] || '').trim().toLowerCase();
-
-        if (!status) continue;
-
-        if (status === 'yes') {
-          yesCount++;
-          if (name) attendees.push({ name, attending: true });
-        } else if (status === 'no') {
-          noCount++;
-        } else if (status === 'maybe') {
-          maybeCount++;
-          if (name) attendees.push({ name, attending: false });
+        // Fallback split logic if name and address are joined by a dash in a single column
+        if (!chosenAddress && chosenVenue.includes('-')) {
+          const parts = chosenVenue.split('-');
+          chosenVenue = parts[0].trim();
+          chosenAddress = parts.slice(1).join('-').trim();
         }
-      }
 
-      document.getElementById('count-yes').textContent = yesCount;
-      document.getElementById('count-no').textContent = noCount;
-      document.getElementById('count-maybe').textContent = maybeCount;
+        // Clean up the text display if the venue field contains brackets or parentheses
+        let shortVenueTitle = chosenVenue.split('(')[0].trim();
 
-      // Populate names without showing contact information
-      if (attendees.length > 0) {
-        const listWrapper = document.getElementById('rsvp-list-wrapper');
-        const listContainer = document.getElementById('rsvp-attendees');
-        listContainer.innerHTML = '';
+        if (chosenVenue) {
+          document.getElementById('dynamic-venue').textContent = shortVenueTitle;
+          document.getElementById('venue-leader-tip').textContent = chosenVenue;
+        } else {
+          document.getElementById('dynamic-venue').textContent = "Top Voted Venue";
+        }
         
-        attendees.forEach(person => {
-          const tag = document.createElement('span');
-          tag.className = 'rsvp-tag' + (person.attending ? ' attending' : '');
-          tag.textContent = person.name + (!person.attending ? ' (Maybe)' : '');
-          listContainer.appendChild(tag);
-        });
-        
-        listWrapper.style.display = 'block';
+        if (chosenAddress) {
+          document.getElementById('dynamic-address').textContent = chosenAddress;
+        } else if (chosenVenue) {
+          document.getElementById('dynamic-address').textContent = chosenVenue;
+        } else {
+          document.getElementById('dynamic-address').textContent = "Top Voted Location";
+        }
       }
     })
     .catch(err => {
-      console.error('Error fetching RSVP records:', err);
+      console.error('Error loading selection data:', err);
+      document.getElementById('dynamic-venue').textContent = "San Pedro Square Market";
+      document.getElementById('dynamic-address').textContent = "7.5 mi - San Jose";
+      document.getElementById('venue-leader-tip').textContent = "San Pedro Square Market";
     });
 })();
 </script>
