@@ -6,7 +6,7 @@
 <title>Events 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600&family=Playfair+Display:ital,wght=0,700;1,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
 <script data-goatcounter="https://cshahria.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 <style>
@@ -190,6 +190,7 @@
   .detail-value a:hover {
     text-decoration: underline;
   }
+  .detail-value.green { color: var(--green-mid); }
 
   /* ── Description ── */
   .event-body {
@@ -201,6 +202,7 @@
     color: #2a2a2a;
     margin-bottom: 1rem;
   }
+  .event-body p:last-child { margin-bottom: 0; }
 
   /* ── Meetup tip ── */
   .meetup-tip {
@@ -274,6 +276,31 @@
     color: #1a5c2a;
   }
 
+  /* ── Contact ── */
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1rem 1.5rem 1.25rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 0.5px solid var(--border);
+    background: #f5f5f3;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .contact-pill:hover { background: #ebebea; }
+  .contact-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+
   /* ── Action Box ── */
   .action-section {
     padding: 1.25rem 1.5rem 1.5rem;
@@ -301,97 +328,6 @@
     display: inline-block;
   }
   .submit-btn:hover { background: var(--green-mid); }
-
-  /* ── Pop-up Modal ── */
-  .modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.2s ease;
-    z-index: 1000;
-    padding: 1rem;
-  }
-  .modal-overlay.open { opacity: 1; pointer-events: auto; }
-  .modal-box {
-    background: #fff;
-    width: 100%;
-    max-width: 400px;
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    position: relative;
-  }
-  .modal-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .form-group { margin-bottom: 12px; }
-  .form-group label {
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: var(--text);
-  }
-  .form-group input[type="text"], .form-group select {
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    outline: none;
-  }
-  .form-group input:focus, .form-group select:focus {
-    border-color: var(--green-mid);
-  }
-  .modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    margin-top: 1.25rem;
-  }
-  .btn-flat {
-    background: transparent; border: none; font-size: 14px; font-weight: 500;
-    padding: 8px 16px; cursor: pointer; border-radius: 6px; color: var(--muted);
-  }
-  .btn-flat:hover { background: #f5f5f3; }
-  .btn-primary {
-    background: var(--green); color: #fff; border: none; font-size: 14px; font-weight: 600;
-    padding: 8px 18px; cursor: pointer; border-radius: 6px;
-  }
-  .btn-primary:hover { background: var(--green-mid); }
-  
-  /* ── Contact ── */
-  .contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 1rem 1.5rem 1.25rem;
-    border-top: 0.5px solid var(--border);
-  }
-  .contact-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 0.5px solid var(--border);
-    background: #f5f5f3;
-    color: var(--text);
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-  .contact-pill:hover { background: #ebebea; }
-  .contact-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
   
   /* ── Footer ── */
   footer {
@@ -402,8 +338,17 @@
     border-top: 1px solid var(--border);
     margin-top: auto;
   }
-  footer .career-link { display: block; margin-top: 8px; color: var(--green-mid); text-decoration: none; font-weight: 500; }
-  footer .career-link:hover { text-decoration: underline; }
+  footer .career-link {
+    display: block;
+    margin-top: 8px;
+    color: var(--green-mid);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  footer .career-link:hover {
+    text-decoration: underline;
+  }
+  
 </style>
 </head>
 <body>
@@ -425,7 +370,10 @@
 </div>
 
 <main>
+
+  <!-- ════════════════ JULY 19 EVENT ════════════════ -->
   <div class="event-card" style="margin-top:2rem;">
+
     <!-- Match header -->
     <div class="match-header">
       <div class="match-label">World Cup Final 🏆</div>
@@ -467,7 +415,9 @@
 	
     <!-- Body -->
     <div class="event-body">
-      <p>The plans are locked in for Yard House at Santana Row. Come out, enjoy the game, and catch up with everyone!</p>
+      <p>
+        The plans are locked in for Yard House at Santana Row. Come out, enjoy the game, and catch up with everyone!
+      </p>
       
       <div class="meetup-tip">
         <strong>Suggested Arrival:</strong> 11:30 PT to secure a table before kick off at 12:00 PT.
@@ -496,10 +446,10 @@
       <div class="rsvp-tags" id="rsvp-attendees"></div>
     </div>
 
-    <!-- Action Section -->
+    <!-- Single Action Button Section -->
     <div class="action-section">
       <p class="action-sub">Let us know if you can make it!</p>
-      <button class="submit-btn" id="open-modal-btn">Submit Interest</button>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQjOdZREh3pPz1L9NnfDAd3GEIR6T0RWp1qO3VwAhUZukhhg/viewform?usp=pp_url&entry.2044826080=Name&entry.966582672=Yes&entry.1499431247=Number" target="_blank" rel="noopener" class="submit-btn">RSVP Here ↗</a>
     </div>
 
     <!-- Contact -->
@@ -510,36 +460,8 @@
       </a>
     </div>
   </div>
-</main>
 
-<!-- Pop-up Submission Modal -->
-<div class="modal-overlay" id="rsvp-modal">
-  <div class="modal-box">
-    <div class="modal-title">Submit Interest</div>
-    <form id="interest-form">
-      <div class="form-group">
-        <label for="field-name">Name</label>
-        <input type="text" id="field-name" required placeholder="Your full name">
-      </div>
-      <div class="form-group">
-        <label for="field-attending">Attending?</label>
-        <select id="field-attending">
-          <option value="Yes">Yes</option>
-          <option value="Maybe">Maybe</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="field-contact">Contact (Hidden from page)</label>
-        <input type="text" id="field-contact" placeholder="Email or Phone number">
-      </div>
-      <div class="modal-actions">
-        <button type="button" class="btn-flat" id="close-modal-btn">Cancel</button>
-        <button type="submit" class="btn-primary" id="submit-form-btn">Submit</button>
-      </div>
-    </form>
-  </div>
-</div>
+</main>
 
 <footer>
   <p>A personal journal · Shared with family &amp; friends · Not for public distribution</p>
@@ -548,62 +470,8 @@
 
 <script>
 (function() {
+  // New Form Responses CSV URL
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTnl6EZEG1BbrmRIuXNhfJaPhIr-GkY3QUwY9DtIn_Y1MUVv4UzdCDBNNcz2_e9rtrMqnwQQSwddnGj/pub?output=csv';
-  
-  // Base entry end-point link extracted from form
-  const formSubmitUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdQjOdZREh3pPz1L9NnfDAd3GEIR6T0RWp1qO3VwAhUZukhhg/formResponse';
-
-  // Modal DOM elements
-  const modal = document.getElementById('rsvp-modal');
-  const openBtn = document.getElementById('open-modal-btn');
-  const closeBtn = document.getElementById('close-modal-btn');
-  const rsvpForm = document.getElementById('interest-form');
-
-  // Toggle Modal handlers
-  openBtn.addEventListener('click', () => modal.classList.add('open'));
-  closeBtn.addEventListener('click', () => modal.classList.remove('open'));
-  modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('open'); });
-
-  // Handle local context pop-up intercepting submit payload structure
-  rsvpForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const submitBtn = document.getElementById('submit-form-btn');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-
-    const nameVal = document.getElementById('field-name').value;
-    const attendingVal = document.getElementById('field-attending').value;
-    const contactVal = document.getElementById('field-contact').value;
-
-    // Direct string matching parameters mapping to matching entry slots
-    const formData = new FormData();
-    formData.append('entry.2044826080', nameVal);
-    formData.append('entry.966582672', attendingVal);
-    formData.append('entry.1499431247', contactVal);
-
-    // Dynamic background network post dispatch
-    fetch(formSubmitUrl, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: formData
-    })
-    .then(() => {
-      submitBtn.textContent = 'Submitted!';
-      setTimeout(() => {
-        modal.classList.remove('open');
-        rsvpForm.reset();
-        submitBtn.textContent = 'Submit';
-        submitBtn.disabled = false;
-        // Hot pull fresh contents data reflection update execution
-        loadRSVPTallies();
-      }, 1000);
-    })
-    .catch(err => {
-      console.error('Error posting response:', err);
-      submitBtn.textContent = 'Submit';
-      submitBtn.disabled = false;
-    });
-  });
 
   function parseCSV(text) {
     const rows = [];
@@ -637,60 +505,59 @@
     return rows.filter(r => r.some(cell => cell.trim() !== ''));
   }
 
-  function loadRSVPTallies() {
-    fetch(csvUrl)
-      .then(res => res.text())
-      .then(text => {
-        const rows = parseCSV(text);
-        if (rows.length <= 1) return;
+  fetch(csvUrl)
+    .then(res => res.text())
+    .then(text => {
+      const rows = parseCSV(text);
+      if (rows.length <= 1) return;
 
-        let yesCount = 0;
-        let noCount = 0;
-        let maybeCount = 0;
-        const attendees = [];
+      let yesCount = 0;
+      let noCount = 0;
+      let maybeCount = 0;
+      const attendees = [];
 
-        for (let i = 1; i < rows.length; i++) {
-          const name = (rows[i][1] || '').trim();
-          const status = (rows[i][2] || '').trim().toLowerCase();
+      // Columns layout mapping:
+      // Index 0: Timestamp, Index 1: Name, Index 2: Attending, Index 3: Contact
+      for (let i = 1; i < rows.length; i++) {
+        const name = (rows[i][1] || '').trim();
+        const status = (rows[i][2] || '').trim().toLowerCase();
 
-          if (!status) continue;
+        if (!status) continue;
 
-          if (status === 'yes') {
-            yesCount++;
-            if (name) attendees.push({ name, attending: true });
-          } else if (status === 'no') {
-            noCount++;
-          } else if (status === 'maybe') {
-            maybeCount++;
-            if (name) attendees.push({ name, attending: false });
-          }
+        if (status === 'yes') {
+          yesCount++;
+          if (name) attendees.push({ name, attending: true });
+        } else if (status === 'no') {
+          noCount++;
+        } else if (status === 'maybe') {
+          maybeCount++;
+          if (name) attendees.push({ name, attending: false });
         }
+      }
 
-        document.getElementById('count-yes').textContent = yesCount;
-        document.getElementById('count-no').textContent = noCount;
-        document.getElementById('count-maybe').textContent = maybeCount;
+      document.getElementById('count-yes').textContent = yesCount;
+      document.getElementById('count-no').textContent = noCount;
+      document.getElementById('count-maybe').textContent = maybeCount;
 
-        // Render clean public names feed string metrics cleanly
-        if (attendees.length > 0) {
-          const listWrapper = document.getElementById('rsvp-list-wrapper');
-          const listContainer = document.getElementById('rsvp-attendees');
-          listContainer.innerHTML = '';
-          
-          attendees.forEach(person => {
-            const tag = document.createElement('span');
-            tag.className = 'rsvp-tag' + (person.attending ? ' attending' : '');
-            tag.textContent = person.name + (!person.attending ? ' (Maybe)' : '');
-            listContainer.appendChild(tag);
-          });
-          
-          listWrapper.style.display = 'block';
-        }
-      })
-      .catch(err => console.error('Error fetching RSVP records:', err));
-  }
-
-  // Initial runtime execute target trigger on load configuration
-  loadRSVPTallies();
+      // Populate names without showing contact information
+      if (attendees.length > 0) {
+        const listWrapper = document.getElementById('rsvp-list-wrapper');
+        const listContainer = document.getElementById('rsvp-attendees');
+        listContainer.innerHTML = '';
+        
+        attendees.forEach(person => {
+          const tag = document.createElement('span');
+          tag.className = 'rsvp-tag' + (person.attending ? ' attending' : '');
+          tag.textContent = person.name + (!person.attending ? ' (Maybe)' : '');
+          listContainer.appendChild(tag);
+        });
+        
+        listWrapper.style.display = 'block';
+      }
+    })
+    .catch(err => {
+      console.error('Error fetching RSVP records:', err);
+    });
 })();
 </script>
 </body>
