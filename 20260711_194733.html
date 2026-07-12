@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Events 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600&family=Playfair+Display:ital,wght=0,700;1,700&display=swap" rel="stylesheet" />
+<script data-goatcounter="https://cshahria.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1a5c2a;
+    --green-light: #e8f5ec;
+    --green-mid: #2d7a3e;
+    --gold: #c9963a;
+    --text: #1a1a1a;
+    --muted: #5c5c5c;
+    --border: rgba(0,0,0,0.10);
+    --radius: 12px;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f9f7f4;
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Nav ── */
+  .site-nav { background: #0d3b1f; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 52px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 700; color: #f0d080; text-decoration: none; }
+  .nav-links { display: flex; }
+  .nav-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; padding: 0 1rem; height: 52px; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.2s; }
+  .nav-link:hover { color: #fff; }
+  .nav-link.active { color: #f0d080; border-bottom-color: #c9963a; }
+
+  /* ── Page hero ── */
+  .hero {
+    background: linear-gradient(135deg, #0d3b1f 0%, #1a5c2a 60%, #2d7a3e 100%);
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,150,58,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .hero h1 em { color: #f0d080; font-style: italic; }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 6px;
+  }
+
+  /* ── Main ── */
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* ── Event card ── */
+  .event-card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+
+  /* ── Match header ── */
+  .match-header {
+    background: linear-gradient(135deg, #0d3b1f 0%, #1a5c2a 100%);
+    padding: 1.75rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  .match-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 1.25rem;
+  }
+  .match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .match-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 90px;
+  }
+  .team-flag {
+    font-size: 42px;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  .team-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .match-vs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .vs-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .match-time-badge {
+    background: rgba(201,150,58,0.22);
+    border: 1px solid rgba(201,150,58,0.45);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #f0d080;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  /* ── Details grid ── */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .detail-cell {
+    background: #fff;
+    padding: 14px 16px;
+  }
+  .detail-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .detail-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .detail-value a {
+    color: var(--green-mid);
+    text-decoration: none;
+  }
+  .detail-value a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Description ── */
+  .event-body {
+    padding: 1.4rem 1.5rem;
+  }
+  .event-body p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 1rem;
+  }
+
+  /* ── Meetup tip ── */
+  .meetup-tip {
+    background: var(--green-light);
+    border-left: 3px solid var(--green-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 1rem 0;
+    font-size: 14px;
+    color: #1a4022;
+    line-height: 1.6;
+  }
+  .meetup-tip strong { font-weight: 600; }
+
+  /* ── Tally Tiles ── */
+  .tally-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 1rem;
+  }
+  .tally-tile {
+    background: #f5f5f3;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .tally-count {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .tally-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .tally-tile.yes { background: #e8f5ec; border-color: rgba(45,122,62,0.2); }
+  .tally-tile.yes .tally-count { color: var(--green-mid); }
+
+  /* ── Rsvp List ── */
+  .rsvp-list-section {
+    padding: 0 1.5rem 1.5rem;
+  }
+  .rsvp-list-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .rsvp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .rsvp-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #f1f1f1;
+    border: 0.5px solid var(--border);
+  }
+  .rsvp-tag.attending {
+    background: #e8f5ec;
+    color: #1a5c2a;
+  }
+
+  /* ── Action Box ── */
+  .action-section {
+    padding: 1.25rem 1.5rem 1.5rem;
+    border-top: 0.5px solid var(--border);
+    text-align: center;
+  }
+  .action-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .submit-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .submit-btn:hover { background: var(--green-mid); }
+
+  /* ── Pop-up Modal ── */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+    padding: 1rem;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: auto; }
+  .modal-box {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .form-group { margin-bottom: 12px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+  .form-group input[type="text"], .form-group select {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+  }
+  .form-group input:focus, .form-group select:focus {
+    border-color: var(--green-mid);
+  }
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 1.25rem;
+  }
+  .btn-flat {
+    background: transparent; border: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; cursor: pointer; border-radius: 6px; color: var(--muted);
+  }
+  .btn-flat:hover { background: #f5f5f3; }
+  .btn-primary {
+    background: var(--green); color: #fff; border: none; font-size: 14px; font-weight: 600;
+    padding: 8px 18px; cursor: pointer; border-radius: 6px;
+  }
+  .btn-primary:hover { background: var(--green-mid); }
+  
+  /* ── Contact ── */
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1rem 1.5rem 1.25rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 0.5px solid var(--border);
+    background: #f5f5f3;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .contact-pill:hover { background: #ebebea; }
+  .contact-pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+  
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+  footer .career-link { display: block; margin-top: 8px; color: var(--green-mid); text-decoration: none; font-weight: 500; }
+  footer .career-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">⚽ 2026 Adventures</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Journal</a>
+    <a href="connect.html" class="nav-link">Connect</a>
+    <a href="events.html" class="nav-link active">Events</a>
+    <a href="https://cshahria.github.io/Career/index.html" class="nav-link" target="_blank" rel="noopener">Career ↗</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Events</p>
+  <h1>WC2026<br><em>Events</em></h1>
+  <p class="hero-sub">July 19 Final</p>
+</div>
+
+<main>
+  <div class="event-card" style="margin-top:2rem;">
+    <!-- Match header -->
+    <div class="match-header">
+      <div class="match-label">World Cup Final 🏆</div>
+      <div class="match-teams">
+        <div class="match-team">
+          <span class="team-flag">👑</span>
+          <span class="team-name">TBD</span>
+        </div>
+        <div class="match-vs">
+          <span class="vs-text">VS</span>
+          <div class="match-time-badge">12:00 PT</div>
+        </div>
+        <div class="match-team">
+          <span class="team-flag">👑</span>
+          <span class="team-name">TBD</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="detail-grid">
+      <div class="detail-cell">
+        <div class="detail-label">Date</div>
+        <div class="detail-value">Sun, July 19</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Kick Off</div>
+        <div class="detail-value green">12:00 PT</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Venue</div>
+        <div class="detail-value">Yard House</div>
+      </div>
+      <div class="detail-cell">
+        <div class="detail-label">Location</div>
+        <div class="detail-value"><a href="https://maps.app.goo.gl/VTbidCWZbCjrNj8BA" target="_blank" rel="noopener">300 Santana Row Ste 101, San Jose, CA 95128 ↗</a></div>
+      </div>
+    </div>
+	
+    <!-- Body -->
+    <div class="event-body">
+      <p>The plans are locked in for Yard House at Santana Row. Come out, enjoy the game, and catch up with everyone!</p>
+      
+      <div class="meetup-tip">
+        <strong>Suggested Arrival:</strong> 11:30 PT to secure a table before kick off at 12:00 PT.
+      </div>      
+
+      <!-- RSVP Tiles -->
+      <div class="tally-container">
+        <div class="tally-tile yes">
+          <div class="tally-count" id="count-yes">0</div>
+          <div class="tally-label">Yes</div>
+        </div>
+        <div class="tally-tile">
+          <div class="tally-count" id="count-maybe">0</div>
+          <div class="tally-label">Maybe</div>
+        </div>
+        <div class="tally-tile">
+          <div class="tally-count" id="count-no">0</div>
+          <div class="tally-label">No</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active RSVP List Panel -->
+    <div class="rsvp-list-section" id="rsvp-list-wrapper" style="display: none;">
+      <div class="rsvp-list-title">Who's Coming</div>
+      <div class="rsvp-tags" id="rsvp-attendees"></div>
+    </div>
+
+    <!-- Action Section -->
+    <div class="action-section">
+      <p class="action-sub">Let us know if you can make it!</p>
+      <button class="submit-btn" id="open-modal-btn">Submit Interest</button>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-row">
+      <a href="sms:4086690813" class="contact-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text 408-669-0813
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- Pop-up Submission Modal -->
+<div class="modal-overlay" id="rsvp-modal">
+  <div class="modal-box">
+    <div class="modal-title">Submit Interest</div>
+    <form id="interest-form">
+      <div class="form-group">
+        <label for="field-name">Name</label>
+        <input type="text" id="field-name" required placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label for="field-attending">Attending?</label>
+        <select id="field-attending">
+          <option value="Yes">Yes</option>
+          <option value="Maybe">Maybe</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="field-contact">Contact (Hidden from page)</label>
+        <input type="text" id="field-contact" placeholder="Email or Phone number">
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-flat" id="close-modal-btn">Cancel</button>
+        <button type="submit" class="btn-primary" id="submit-form-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>A personal journal · Shared with family &amp; friends · Not for public distribution</p>
+  <a class="career-link" href="https://cshahria.github.io/Career/index.html" target="_blank" rel="noopener">My career site ↗</a>
+</footer>
+
+<script>
+(function() {
+  const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTnl6EZEG1BbrmRIuXNhfJaPhIr-GkY3QUwY9DtIn_Y1MUVv4UzdCDBNNcz2_e9rtrMqnwQQSwddnGj/pub?output=csv';
+  
+  // Base entry end-point link extracted from form
+  const formSubmitUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdQjOdZREh3pPz1L9NnfDAd3GEIR6T0RWp1qO3VwAhUZukhhg/formResponse';
+
+  // Modal DOM elements
+  const modal = document.getElementById('rsvp-modal');
+  const openBtn = document.getElementById('open-modal-btn');
+  const closeBtn = document.getElementById('close-modal-btn');
+  const rsvpForm = document.getElementById('interest-form');
+
+  // Toggle Modal handlers
+  openBtn.addEventListener('click', () => modal.classList.add('open'));
+  closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('open'); });
+
+  // Handle local context pop-up intercepting submit payload structure
+  rsvpForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const submitBtn = document.getElementById('submit-form-btn');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const nameVal = document.getElementById('field-name').value;
+    const attendingVal = document.getElementById('field-attending').value;
+    const contactVal = document.getElementById('field-contact').value;
+
+    // Direct string matching parameters mapping to matching entry slots
+    const formData = new FormData();
+    formData.append('entry.2044826080', nameVal);
+    formData.append('entry.966582672', attendingVal);
+    formData.append('entry.1499431247', contactVal);
+
+    // Dynamic background network post dispatch
+    fetch(formSubmitUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    })
+    .then(() => {
+      submitBtn.textContent = 'Submitted!';
+      setTimeout(() => {
+        modal.classList.remove('open');
+        rsvpForm.reset();
+        submitBtn.textContent = 'Submit';
+        submitBtn.disabled = false;
+        // Hot pull fresh contents data reflection update execution
+        loadRSVPTallies();
+      }, 1000);
+    })
+    .catch(err => {
+      console.error('Error posting response:', err);
+      submitBtn.textContent = 'Submit';
+      submitBtn.disabled = false;
+    });
+  });
+
+  function parseCSV(text) {
+    const rows = [];
+    let row = [];
+    let field = '';
+    let inQuotes = false;
+
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (inQuotes) {
+        if (c === '"') {
+          if (text[i + 1] === '"') { field += '"'; i++; }
+          else { inQuotes = false; }
+        } else {
+          field += c;
+        }
+      } else if (c === '"') {
+        inQuotes = true;
+      } else if (c === ',') {
+        row.push(field); field = '';
+      } else if (c === '\n') {
+        row.push(field); field = '';
+        rows.push(row); row = [];
+      } else if (c === '\r') {
+        // skip
+      } else {
+        field += c;
+      }
+    }
+    if (field.length || row.length) { row.push(field); rows.push(row); }
+    return rows.filter(r => r.some(cell => cell.trim() !== ''));
+  }
+
+  function loadRSVPTallies() {
+    fetch(csvUrl)
+      .then(res => res.text())
+      .then(text => {
+        const rows = parseCSV(text);
+        if (rows.length <= 1) return;
+
+        let yesCount = 0;
+        let noCount = 0;
+        let maybeCount = 0;
+        const attendees = [];
+
+        for (let i = 1; i < rows.length; i++) {
+          const name = (rows[i][1] || '').trim();
+          const status = (rows[i][2] || '').trim().toLowerCase();
+
+          if (!status) continue;
+
+          if (status === 'yes') {
+            yesCount++;
+            if (name) attendees.push({ name, attending: true });
+          } else if (status === 'no') {
+            noCount++;
+          } else if (status === 'maybe') {
+            maybeCount++;
+            if (name) attendees.push({ name, attending: false });
+          }
+        }
+
+        document.getElementById('count-yes').textContent = yesCount;
+        document.getElementById('count-no').textContent = noCount;
+        document.getElementById('count-maybe').textContent = maybeCount;
+
+        // Render clean public names feed string metrics cleanly
+        if (attendees.length > 0) {
+          const listWrapper = document.getElementById('rsvp-list-wrapper');
+          const listContainer = document.getElementById('rsvp-attendees');
+          listContainer.innerHTML = '';
+          
+          attendees.forEach(person => {
+            const tag = document.createElement('span');
+            tag.className = 'rsvp-tag' + (person.attending ? ' attending' : '');
+            tag.textContent = person.name + (!person.attending ? ' (Maybe)' : '');
+            listContainer.appendChild(tag);
+          });
+          
+          listWrapper.style.display = 'block';
+        }
+      })
+      .catch(err => console.error('Error fetching RSVP records:', err));
+  }
+
+  // Initial runtime execute target trigger on load configuration
+  loadRSVPTallies();
+})();
+</script>
+</body>
+</html>
